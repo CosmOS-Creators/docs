@@ -7,12 +7,11 @@ Welcome to CosmOS's documentation!
 ==================================
 
 .. toctree::
-   :maxdepth: 2
-   :caption: Contents:
+    :maxdepth: 2
+    :caption: Contents:
 
-   sites/setup
-
-
+    sites/setup
+    sites/parser
 
 Indices and tables
 ==================
