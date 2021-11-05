@@ -35,6 +35,7 @@ extensions = [
     "myst_parser",
     "breathe",
     "sphinx.ext.autodoc",
+    "sphinx.ext.githubpages",
     "sphinx.ext.napoleon",
     "sphinx.ext.viewcode"
 ]
