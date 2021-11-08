@@ -44,5 +44,5 @@ First time code checkout
 Compiling the source code
 -------------------------
 
-Some default build commands have been setup ready to use ion VSCode.
+Some default build commands have been setup ready to use in VSCode.
 You just need to press :kbd:`Ctrl+Shift+B` to call the default build task.
