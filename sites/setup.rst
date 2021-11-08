@@ -1,8 +1,8 @@
 Project setup
 ==============
 
-This page will describe how to setup the development environment for developing on the CosmOS referecence project.
-The guide will focus on installing the evironment on a windows system but since we are
+This page will describe how to setup the development environment for developing on the CosmOS reference project.
+The guide will focus on installing the environment on a windows system but since we are
 using docker containers and VSCode it should work on most operating systems.
 
 Prerequisites
@@ -25,20 +25,20 @@ First time code checkout
     #. Run with GUI support:
         - If you want to also run any graphical applications (like CustomBox) from the docker container make sure that you have `WSLg <https://github.com/microsoft/wslg>`_ installed if you are on windows.
         - Open the file :file:`.devcontainer/dev_container_GUI.yaml`
-        - If you are on windows make sure that under volumes the path on the left of the ``:`` symbol matches your particualr installed WSL distro.
+        - If you are on windows make sure that under volumes the path on the left of the ``:`` symbol matches your particular installed WSL distro.
           The default one is set to ``Ubuntu-20.04``
 
           If you are on linux you should be able to just mount it to the same location as it is mounted to inside the container.
     #. Run without GUI support:
         - Open the file :file:`.devcontainer/devcontainer.json` and make sure that the property ``dockerComposeFile`` is set to use the :file:`dev_container.yaml` file
-#. VSCode should ask you now if you would like to repoen the workspace in a new docker container. Select reopen in container:
+#. VSCode should ask you now if you would like to reopen the workspace in a new docker container. Select reopen in container:
     .. image:: ../images/open_in_container_message.png
         :alt: Reopen in container message
 #. After VSCode reopens open a new terminal window and run the following command:
     .. code-block::
 
             git clone https://github.com/CosmOS-Creators/reference_project_stmIDE.git . --recurse-submodules
-#. Now you might need to select workspace folder location inside the doecker container in VSCode or you can also just close and repoen VSCode in order for it to to it for you.
+#. Now you might need to select workspace folder location inside the docker container in VSCode or you can also just close and reopen VSCode in order for it to to it for you.
 
 
 Compiling the source code
