@@ -5,4 +5,5 @@ Parser Documentation
     :caption: Contents:
 
     parser/config_files
+    parser/links
     parser/constants
