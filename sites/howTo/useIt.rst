@@ -1,4 +1,4 @@
-Use it
+Use it in your project
 =============================
 
 .. toctree::

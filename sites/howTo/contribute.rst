@@ -4,5 +4,6 @@ Contribute
 .. toctree::
     :caption: Contents:
 
-    contribute/setup
-    contribute/hardware
+    contribute/c
+    contribute/python
+    contribute/yourIdeas

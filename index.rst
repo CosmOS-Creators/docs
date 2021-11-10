@@ -10,6 +10,7 @@ Welcome to CosmOS's documentation!
     :maxdepth: 2
     :caption: Contents:
 
+    sites/whatIs
     sites/howTo
     sites/documentation
 
