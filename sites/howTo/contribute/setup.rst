@@ -1,7 +1,7 @@
-Project setup
-==============
+Development environment setup
+=============================
 
-This page will describe how to setup the development environment for developing on the CosmOS reference project.
+This page will describe how to setup the development environment for developing/contribution on the CosmOS reference project.
 The guide will focus on installing the environment on a windows system but since we are
 using docker containers and VSCode it should work on most operating systems.
 
@@ -32,7 +32,7 @@ First time code checkout
     #. Run without GUI support:
         - Open the file :file:`.devcontainer/devcontainer.json` and make sure that the property ``dockerComposeFile`` is set to use the :file:`dev_container.yaml` file
 #. VSCode should ask you now if you would like to reopen the workspace in a new docker container. Select reopen in container:
-    .. image:: ../images/open_in_container_message.png
+    .. image:: ../../../images/open_in_container_message.png
         :alt: Reopen in container message
 #. After VSCode reopens open a new terminal window and run the following command:
     .. code-block::

@@ -23,7 +23,7 @@ copyright = "2021, Pavol Kostolansky, Florian Laschober"
 author = "Pavol Kostolansky, Florian Laschober"
 
 # The full version, including alpha/beta/rc tags
-release = "0.1.0"
+release = "pre-alpha"
 
 
 # -- General configuration ---------------------------------------------------

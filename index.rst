@@ -10,8 +10,8 @@ Welcome to CosmOS's documentation!
     :maxdepth: 2
     :caption: Contents:
 
-    sites/setup
-    sites/parser
+    sites/howTo
+    sites/documentation
 
 Indices and tables
 ==================
