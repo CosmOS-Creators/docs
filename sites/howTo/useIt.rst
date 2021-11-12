@@ -1,4 +1,4 @@
-Use it in your project
+Use CosmOS in your project
 =============================
 
 .. toctree::

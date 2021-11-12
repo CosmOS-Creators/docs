@@ -1,8 +1,8 @@
-Documentation
+Community
 =============================
 
 .. toctree::
     :caption: Contents:
 
-    documentation/cosmos
-    documentation/customBox
+    community/discord
+    community/twitter

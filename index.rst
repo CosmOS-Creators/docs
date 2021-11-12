@@ -13,6 +13,8 @@ Welcome to CosmOS's documentation!
     sites/whatIs
     sites/howTo
     sites/documentation
+    sites/community
+    sites/faq
 
 Indices and tables
 ==================
