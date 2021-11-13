@@ -10,12 +10,13 @@ Welcome to CosmOS's documentation!
     :maxdepth: 2
     :caption: Contents:
 
+    sites/about
     sites/whatIs
     sites/howTo
     sites/documentation
     sites/community
-    sites/faq
     sites/supportTheIdea
+    sites/faq
 
 Indices and tables
 ==================
