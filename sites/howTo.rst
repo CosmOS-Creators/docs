@@ -4,7 +4,7 @@ How to
 .. toctree::
     :caption: Contents:
 
-    howTo/useReferenceProject
+    howTo/setupReferenceProject
     howTo/useIt
     howTo/contribute
     howTo/reportBug

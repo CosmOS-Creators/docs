@@ -9,8 +9,8 @@ Prerequisites
 --------------
 
 - Windows with at least `WSL2 <https://docs.microsoft.com/en-us/windows/wsl/install>`_ installed or just linux will work too.
-- `Docker <https://docs.docker.com/desktop/windows/wsl/>`_
-- `Visual Studio Code <https://code.visualstudio.com/>`_
+- `Docker <https://docs.docker.com/desktop/windows/wsl>`_
+- `Visual Studio Code <https://code.visualstudio.com>`_
 
 First time code checkout
 ------------------------
@@ -32,17 +32,10 @@ First time code checkout
     #. Run without GUI support:
         - Open the file :file:`.devcontainer/devcontainer.json` and make sure that the property ``dockerComposeFile`` is set to use the :file:`dev_container.yaml` file
 #. VSCode should ask you now if you would like to reopen the workspace in a new docker container. Select reopen in container:
-    .. image:: ../../../images/devEnv/open_in_container_message.png
+    .. image:: ../../../../images/devEnv/open_in_container_message.png
         :alt: Reopen in container message
 #. After VSCode reopens open a new terminal window and run the following command:
     .. code-block::
 
             git clone https://github.com/CosmOS-Creators/reference_project_stmIDE.git . --recurse-submodules
 #. Now you might need to select workspace folder location inside the docker container in VSCode or you can also just close and reopen VSCode in order for it to to it for you.
-
-
-Compiling the source code
--------------------------
-
-Some default build commands have been setup ready to use in VSCode.
-You just need to press :kbd:`Ctrl+Shift+B` to call the default build task.

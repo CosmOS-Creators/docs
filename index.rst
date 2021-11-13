@@ -15,6 +15,7 @@ Welcome to CosmOS's documentation!
     sites/documentation
     sites/community
     sites/faq
+    sites/supportTheIdea
 
 Indices and tables
 ==================

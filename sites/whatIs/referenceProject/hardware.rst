@@ -37,7 +37,7 @@ and more you can read on the `Nucleo-144 board product page <https://www.st.com/
 Resources
 --------------
 
-- `STM32H755ZI microcontroller product page <https://www.st.com/en/microcontrollers-microprocessors/stm32h755zi.html/>`_
-- `STM32H755ZI MCU reference manual <https://www.st.com/resource/en/reference_manual/dm00176879-stm32h745755-and-stm32h747757-advanced-armbased-32bit-mcus-stmicroelectronics.pdf/>`_
-- `Nucleo-144 board product page <https://www.st.com/en/microcontrollers-microprocessors/stm32h755zi.html/>`_
-- `H755ZIQ-C01 development board schematics <https://www.st.com/resource/en/schematic_pack/mb1363-h755ziq-c01_schematic.pdf/>`_
+- `STM32H755ZI microcontroller product page <https://www.st.com/en/microcontrollers-microprocessors/stm32h755zi.html>`_
+- `STM32H755ZI MCU reference manual <https://www.st.com/resource/en/reference_manual/dm00176879-stm32h745755-and-stm32h747757-advanced-armbased-32bit-mcus-stmicroelectronics.pdf>`_
+- `Nucleo-144 board product page <https://www.st.com/en/microcontrollers-microprocessors/stm32h755zi.html>`_
+- `H755ZIQ-C01 development board schematics <https://www.st.com/resource/en/schematic_pack/mb1363-h755ziq-c01_schematic.pdf>`_
