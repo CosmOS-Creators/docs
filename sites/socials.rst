@@ -1,7 +1,7 @@
-Community
+Socials
 =============================
 
 .. toctree::
     :caption: Contents:
 
-    community/discord
+    socials/twitter

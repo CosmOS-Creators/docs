@@ -14,8 +14,10 @@ Welcome to CosmOS's documentation!
     sites/whatIs
     sites/howTo
     sites/documentation
-    sites/community
     sites/supportTheIdea
+    sites/community
+    sites/socials
+    sites/contact
     sites/faq
 
 Indices and tables
