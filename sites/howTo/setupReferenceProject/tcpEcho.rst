@@ -8,7 +8,7 @@ Prerequisites
 --------------
 
 - Flashed reference hardware development board with the reference project image with echo server testing program.
-- `Echo tool <https://github.com/PavelBansky/EchoTool>`_\
+- `Echo tool <https://github.com/PavelBansky/EchoTool>`_
 - Currently is the reference project lwip stack IP address configured as static 192.168.1.30, this is of course possible to change to match your local network configuration.
 
 TCP echo test between windows host and reference hardware

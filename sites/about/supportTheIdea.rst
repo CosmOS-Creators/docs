@@ -1,4 +1,4 @@
-Support the idea!
+Support the idea
 =============================
 
 I am representing a company

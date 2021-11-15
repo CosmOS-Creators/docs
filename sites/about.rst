@@ -8,3 +8,5 @@ About
     about/structure
     about/mainFeatures
     about/roadmap
+    about/releaseNotes
+    about/supportTheIdea

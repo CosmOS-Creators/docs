@@ -14,7 +14,7 @@ Welcome to CosmOS's documentation!
     sites/whatIs
     sites/howTo
     sites/documentation
-    sites/supportTheIdea
+    sites/kudos
     sites/community
     sites/socials
     sites/contact

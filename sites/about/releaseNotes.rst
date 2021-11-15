@@ -1,8 +1,7 @@
-Socials
+Release notes
 =============================
 
 .. toctree::
     :caption: Contents:
 
-    socials/linkedIn
-    socials/twitter
+    releaseNotes/preAlpha
