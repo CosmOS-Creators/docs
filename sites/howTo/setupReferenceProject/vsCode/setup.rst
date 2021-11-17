@@ -38,4 +38,5 @@ First time code checkout
     .. code-block::
 
             git clone https://github.com/CosmOS-Creators/reference_project_stmIDE.git . --recurse-submodules
+            git submodule foreach git checkout master
 #. Now you might need to select workspace folder location inside the docker container in VSCode or you can also just close and reopen VSCode in order for it to to it for you.

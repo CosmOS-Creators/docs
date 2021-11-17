@@ -6,14 +6,17 @@ This page will provide you information about import of reference project into th
 Prerequisites
 --------------
 
-- Locally cloned `reference project repository <https://github.com/CosmOS-Creators/reference_project_stmIDE>`_
 - Locally installed `STM32 Cube IDE <https://www.st.com/en/development-tools/stm32cubeide.html>`_
 
 
 First time STM32 Cube IDE project import
 ----------------------------------------
+#. First of all you have to run following commands in your local directory for cloning reference project:
+    .. code-block::
 
-#. First of all we open the STM32 Cube IDE and go to the menu option File/Open projects from file system.
+            git clone https://github.com/CosmOS-Creators/reference_project_stmIDE.git . --recurse-submodules
+            git submodule foreach git checkout master
+#. After cloning the reference project we open the STM32 Cube IDE and go to the menu option File/Open projects from file system.
     .. image:: ../../../../images/stmIde/import_project_stmIde.png
         :alt: Open projects from file system
 #. Then a window *Import project from the file system or archive* will show up and we click on the highlighted button **Directory**. The file explorer window will show up and we point to the reference project directory and press button **Select Folder**.
