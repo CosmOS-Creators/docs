@@ -3,10 +3,10 @@ Functional
 
 This page will describe how to contribute to the CosmOS C code base. We strongly suggest using VS Code development environment running in the docker container.
 
-For better understanding of the module folder structure we will create it in following example for the os module with os unit inside.
-
 Example module folder structure creation
 ----------------------------------------------------
+For better understanding of the module folder structure we will create it in following example for the os module with os unit inside.
+
 #. In the os folder we create two folders src for the unit source files and inc for the included files as it is shown in the following example:
     ::
 

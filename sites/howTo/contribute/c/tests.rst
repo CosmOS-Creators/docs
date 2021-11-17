@@ -3,11 +3,10 @@ Tests
 
 This page will describe how to contribute with unit tests of the C code base. We strongly suggest using VS Code development environment running in the docker container.
 
-
-For better understanding of the test folder structure we will create it in following example in os module folder for the os unit. The following test folder structure will contain all necessary files for the os unit testing.
-
 Example test folder structure creation in module folder
 -----------------------------------------------------------
+For better understanding of the test folder structure we will create it in following example in os module folder for the os unit. The following test folder structure will contain all necessary files for the os unit testing.
+
 #. First of all we need to create CMakeLists.txt in the module folder as it is shown in the following example:
     ::
 
