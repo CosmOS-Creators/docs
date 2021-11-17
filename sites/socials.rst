@@ -5,4 +5,3 @@ Socials
     :caption: Contents:
 
     socials/linkedIn
-    socials/twitter
