@@ -1,7 +1,7 @@
 Logger
 =============================
 
-This page will provide you information about logger serial port connection creation in the STM32 Cube IDE.
+This page will provide you with information about the logger and serial port connection creation in the STM32 Cube IDE.
 
 Prerequisites
 --------------
@@ -11,7 +11,7 @@ Prerequisites
 New serial port connection creation
 ----------------------------------------
 
-#. First of all we open the STM32 Cube IDE and on the bottom right side we click on the down arrow next to the **New console** icon and we choose command shell console.
+#. First of all we open the STM32 Cube IDE and on the bottom right side we expand the :menuselection:`Window+ icon (New console)` option and select :menuselection:`command shell console`.
     .. image:: ../../../../images/logger/command_shell.png
         :alt: Command shell opening
 #. New window will show up with the name *Select remote connection*. Now we have to create new connection name and therefore we click on the **New** button next to the select connection.

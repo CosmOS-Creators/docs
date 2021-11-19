@@ -1,7 +1,7 @@
 Compiling
 =============================
 
-This page will provide you information about compiling of the reference project in the STM32 Cube IDE.
+This page will provide you with information about compiling the reference project in VSCode.
 
 Compiling of the reference project
 -----------------------------------

@@ -10,7 +10,7 @@ Prerequisites
 
 - Windows with at least `WSL2 <https://docs.microsoft.com/en-us/windows/wsl/install>`_ installed or just linux will work too.
 - `Docker <https://docs.docker.com/desktop/windows/wsl>`_
-- `Visual Studio Code <https://code.visualstudio.com>`_
+- `Visual Studio Code (VSCode) <https://code.visualstudio.com>`_
 
 First time code checkout
 ------------------------

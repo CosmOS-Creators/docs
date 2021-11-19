@@ -1,7 +1,7 @@
 Visual Studio Code
 =================================
 
-Reference project currently supports the development in visual studio code to some extent.
+The reference project currently supports the development in Visual Studio Code (VSCode) to some extent.
 It is possible to import and compile the project in it, but the debugging is not supported yet.
 
 .. toctree::

@@ -22,13 +22,13 @@ and more you can read on the `STM32H755ZI microcontroller product page <https://
 
 Development board
 ------------------
-As the reference development board we chose Nucleo-144 development board with STM32H755ZI MCU.
+As the reference development board we chose the Nucleo-144 development board with STM32H755ZI MCU.
 
 The main features are:
 ~~~~~~~~~~~~~~~~~~~~~~
 * USB OTG full speed or device only
-* Board connectors:USB with Micro-AB or USB Type-C®Ethernet RJ45
-* On-board ST-LINK debugger/programmer with USB re-enumeration capability: mass storage, Virtual COM port, and debug port
+* Board connectors: USB with Micro-AB or USB Type-C®Ethernet RJ45
+* On-board ST-LINK debugger/programmer with USB re-enumeration capability: mass storage, virtual COM port, and debug port
 * Support of a wide choice of Integrated Development Environments (IDEs) including IAR Embedded Workbench®, MDK-ARM, and STM32CubeIDE
 
 and more you can read on the `Nucleo-144 board product page <https://www.st.com/en/microcontrollers-microprocessors/stm32h755zi.html/>`_
