@@ -8,7 +8,6 @@ This page will describe how to contribute to the CosmOS open source project.
 
     contribute/c
     contribute/python
-    contribute/yourIdeas
 
 What does the Code of Conduct mean for me?
 ------------------------------------------------

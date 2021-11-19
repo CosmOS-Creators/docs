@@ -10,3 +10,4 @@ About
     about/roadmap
     about/releaseNotes
     about/supportTheIdea
+    about/whitepaper
