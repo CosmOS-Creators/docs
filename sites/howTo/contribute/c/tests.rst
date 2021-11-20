@@ -1,13 +1,13 @@
 Tests
 =============================
 
-This page will describe how to contribute with unit tests of the C code base. We strongly suggest using VS Code development environment running in the docker container.
+This page will describe how to contribute with unit tests of the C code base. We strongly suggest using the VSCode development environment running in the docker container.
 
 Example test folder structure creation in module folder
 -----------------------------------------------------------
-For better understanding of the test folder structure we will create it in following example in os module folder for the os unit. The following test folder structure will contain all necessary files for the os unit testing.
+For better understanding of the test folder structure we will create it in the following example in the os module folder for the os unit. The following test folder structure will contain all necessary files for the os unit testing.
 
-#. First of all we need to create CMakeLists.txt in the module folder as it is shown in the following example:
+#. First of all we need to create :file:`CMakeLists.txt` in the module folder as it is shown in the following example:
     ::
 
         os (module)
@@ -15,7 +15,7 @@ For better understanding of the test folder structure we will create it in follo
         ├── inc
         └── CMakeLists.txt
 
-    - The CMakeLists.txt collects all unit tests from the module. It has the came content for the every module and can be copied over. Here is its code which can be used during the new test environment setup:
+    - The :file:`CMakeLists.txt` collects all unit tests from the module. It has the same content for every module and can be copied over. Here is its code which can be used during the setup of new test environments:
         .. code-block:: cmake
 
             cmake_minimum_required(VERSION 3.14)
@@ -31,7 +31,7 @@ For better understanding of the test folder structure we will create it in follo
                 endforeach(UNIT_TEST_DIRECTORY)
             endif()
 
-#. Then we create in module folder test folder with two sub-folders - mock and ut as it is shown in the following example:
+#. Then we create a :file:`test` folder in :file:`module` with two sub-folders - :file:`mock` and :file:`ut` as it is shown in the following example:
     ::
 
         os (module)
@@ -43,7 +43,7 @@ For better understanding of the test folder structure we will create it in follo
             └── ut
 
 
-#. In the mock folder we create then folder for os unit mock with name **os** and create there mock.cpp and osMock.h as it is shown in the following example:
+#. In :file:`mock` we then create a :file:`os` folder for the os unit mock and two files, :file:`mock.cpp` and :file:`osMock.h` as it is shown in the following example:
     ::
 
         os (module)
@@ -57,7 +57,7 @@ For better understanding of the test folder structure we will create it in follo
                     ├── mock.cpp
                     └── osMock.h
 
-#. In the ut folder we create then folder for os unit test cfg and two files, CMakeLists.txt and ut.cpp as it is shown in the following example:
+#. In :file:`ut` we then create a :file:`os` folder for the os unit test cfg and two files, :file:`CMakeLists.txt` and :file:`ut.cpp` as it is shown in the following example:
     ::
 
         os (module)
@@ -75,7 +75,7 @@ For better understanding of the test folder structure we will create it in follo
                     ├── CMakeLists.txt
                     └── cfg
 
-    - The CMakeLists.txt create executable for the current unit test folder. It has the came content for the every unit test folder and can be copied over. Here is its code which can be used during the new test environment setup:
+    - The :file:`CMakeLists.txt` creates an executable for the current unit test folder. It has the same content for the every unit test folder and can be copied over. Here is its code which can be used during the setup of new test environments:
         .. code-block:: cmake
 
             cmake_minimum_required(VERSION 3.14)
@@ -112,9 +112,9 @@ For better understanding of the test folder structure we will create it in follo
                 TARGET ${EXECUTABLE_NAME}
                 EXTRA_ARGS --gtest_output=xml:${COSMOS}/generated/build/tests/results/googletest_${EXECUTABLE_NAME}.xml
                 )
-    - The ut.cpp file uses specific file structure that can be found in the snippets (test_source) or copied from the already implemented ut.cpp - in that case doxygen comments must be fixed.
+    - The :file:`ut.cpp` file uses a specific file structure that can be found in the snippets (keyword: test_source) or copied from the already implemented :file:`ut.cpp` - in that case doxygen comments must be fixed.
 
-#. In the cfg folder we create two files, utCfg.cpp and utCfg.h as it is shown in the following example:
+#. In the :file:`cfg` folder we create two files, :file:`utCfg.cpp` and :file:`utCfg.h` as it is shown in the following example:
     ::
 
         os (module)
@@ -134,9 +134,9 @@ For better understanding of the test folder structure we will create it in follo
                         ├── utCfg.cpp
                         └── utCfg.h
 
-    - The utCfg.cpp and utCfg.h files use specific file structure that can be found in the snippets (utCfg.cpp test_source_configuration, utCfg.h test_header_configuration) or copied from the already implemented utCfg.cpp and utCfg.h files - in that case doxygen comments must be fixed.
+    - The :file:`utCfg.cpp` and :file:`utCfg.h` files use a specific file structure that can be found in the snippets (for :file:`utCfg.cpp` - keyword: test_source_configuration, for :file:`utCfg.h` - keyword: test_header_configuration) or copied from the already implemented :file:`utCfg.cpp` and :file:`utCfg.h` files - in that case doxygen comments must be fixed.
 
-#. Final test folder structure should look exactly the same as it is shown in the following diagram:
+#. The final test folder structure should look exactly the same as it is shown in the following diagram:
     .. image:: ../../../../images/cUnitTests/testFolderStructure.png
 
 Naming conventions
@@ -148,35 +148,35 @@ Naming conventions
 
             #define FOO_BAR
 
-#. Mock class name consists of two parts, first one is the unit name (first letter uppercase) followed by underscore symbol and MOCK as it is shown in the following example for the os unit mock:
+#. Mock class names consist of two parts, the first one is the unit name (PascalCase) followed by an underscore symbol and MOCK as it is shown in the following example for the os unit mock:
     .. code-block:: c
 
         class Os_MOCK
 
-#. Test fixture class name consists of two parts, first one is the unit name (first letter uppercase) followed by underscore symbol and TestFixture as it is shown in the following example for the os unit test fixture:
+#. Test fixture class names consist of two parts, the first one is the unit name (PascalCase) followed by an underscore symbol and TestFixture as it is shown in the following example for the os unit test fixture:
     .. code-block:: c
 
         class Os_TestFixture : public ::testing::Test
 
-#. Test suite name should use Snake_case as it is shown in the following example:
+#. Test suite names should start with Test followed by an underscore symbol and then use camelCase as it is shown in the following example:
     .. code-block:: c
 
         Test_unitName
 
-#. Test name should use SNAKE_CASE as it is shown in the following example for the os_start function where test checks execution flow:
+#. Test names should use SNAKE_CASE as it is shown in the following example for the os_start function where the test checks execution flow:
     .. code-block:: c
 
         #define TEST_OS_START_EXECUTIONFLOW()
 
-#. Global variables should use CamelCase as it is shown in the following example:
+#. Global variables should use PascalCase as it is shown in the following example:
     .. code-block:: c
 
         CosmOS_CoreVariableType CoresVar[CORE_NUM];
 
 Implementation
 ----------------
-#. First of all we would like to say that following rules can be easily observed in any unit test implementation in the `repository <https://github.com/CosmOS-Creators/core>`_. You can use the already implemented unit tests as an example for your implementation if you find it more effective.
-#. For the C and C++ code we use `clang-format <https://clang.llvm.org/docs/ClangFormat.html>`_. If you use the docker development environment the clang-format is preinstalled with correct version and VS Code setup in a way to format your code on save.
+#. First of all we would like to say is that the following rules can be easily observed in any unit test implementation in the `repository <https://github.com/CosmOS-Creators/core>`_. You can use the already implemented unit tests as an example for your implementation if you find it more efficient.
+#. For C and C++ code we use `clang-format <https://clang.llvm.org/docs/ClangFormat.html>`_. If you use the docker development environment clang-format is preinstalled with the correct version and VSCode is setup in a way to format your code on save.
 #. Example mock implementation for the os unit and os_getOsCfg function:
     #. For the mock class and test fixture class:
         .. code-block:: cpp
@@ -230,17 +230,17 @@ Implementation
                 return ( NULL );
             }
 
-#. We have to define test case with unique macro name to be able link them with the functions, the following example contains test case definition for the os_start function where test checks execution flow:
+#. We have to define the test case with an unique macro name to be able to link them with the functions. The following example contains a test case definition for the os_start function where the test checks the execution flow:
     .. code-block:: cpp
 
         #define TEST_OS_START_EXECUTIONFLOW() TEST( Test_os, os_start_executionFlow )
 
-#. To ease test description creation we define macro mapped to the RecordProperty as it is shown in the following example:
+#. To ease test description creation we define a macro mapped to the RecordProperty as it is shown in the following example:
     .. code-block:: cpp
 
         TEST_DESCRIPTION( desc ) RecordProperty( "description", desc )
 
-#. Put description inside the test case function definition:
+#. Put the description inside the test case function definition:
     .. code-block:: c
 
         TEST_OS_START_EXECUTIONFLOW()
@@ -249,7 +249,7 @@ Implementation
                 "This test validates execution flow of the os_start function" );
         }
 
-#. Use proper doxygen comments. For the test case function definition, the following example contains test case doxygen comment for the os_start function where test checks execution flow:
+#. Use proper doxygen comments for the test case function definition. The following example contains a test case doxygen comment for the os_start function where the test checks the execution flow:
     .. code-block:: c
 
         /********************************************************************************
@@ -265,7 +265,7 @@ Implementation
         {
 
         }
-#. Put your code to the correct doxygen section, in this specific case inside the Testcases group as it is shown in the following example:
+#. Put your code into the correct doxygen section, in this specific case inside the Testcases group as it is shown in the following example:
     .. code-block:: c
 
         /********************************************************************************
@@ -297,4 +297,4 @@ Implementation
 
 Tips and tricks
 -----------------
-#. If you develop in the VS Code you can use code `snippets <https://github.com/CosmOS-Creators/reference_project_stmIDE/blob/master/.vscode/CosmOS%20snippets.code-snippets>`_. Just start typing the name of the code snippet and VS Code will automatically offer you the snippet (then press TAB).
+#. If you develop in the VSCode you can use code `snippets <https://github.com/CosmOS-Creators/reference_project_stmIDE/blob/master/.vscode/CosmOS%20snippets.code-snippets>`_. Just start typing the keyword of the code snippet and VSCode will automatically offer you the snippet (then press TAB).

@@ -6,7 +6,7 @@ please don't be afraid to use our community `discord channel <https://discord.gg
 
 
 
-You can find us also on linked in:
+You can find us also on LinkedIn:
 
 `Pavol Kostolansky <https://www.linkedin.com/in/pavolkostolansky>`_
 
