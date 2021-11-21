@@ -110,7 +110,7 @@ For better understanding of the test folder structure we will create it in the f
             include(GoogleTest)
             gtest_add_tests(
                 TARGET ${EXECUTABLE_NAME}
-                EXTRA_ARGS --gtest_output=xml:${COSMOS}/generated/build/tests/results/googletest_${EXECUTABLE_NAME}.xml
+                EXTRA_ARGS --gtest_output=xml:${TEST_RESULTS_DIRECTORY}/googletest_${EXECUTABLE_NAME}.xml --gtest_filter=*
                 )
     - The :file:`ut.cpp` file uses a specific file structure that can be found in the snippets (keyword: test_source) or copied from the already implemented :file:`ut.cpp` - in that case doxygen comments must be fixed.
 
