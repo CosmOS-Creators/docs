@@ -48,12 +48,6 @@ Actual Result
 --------------------
 Here is the result of the bug. Does the application crash? Does nothing happen at all? Is an error displayed?
 
-.. TODO:
-    - [ ] Either remove or completely change the following paragraph.
-
-
-In our experience, testers can be a little vague in this department, so encourage them to be as distinct as possible and provide some information on isolation to make the bug report more actionable – “Button does not work as expected” isn’t helpful, whereas “Button closes app across different platforms, different os versions, or different screen sizes” gives developers a much better feel for the problem. It also provides them with additional details to help start their investigation.
-
 Proof
 --------------------
 Any pertinent screenshots, videos, or log files should be attached.
