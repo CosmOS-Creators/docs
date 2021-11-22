@@ -22,10 +22,10 @@ List of items that should be included in the bug report
 
 Title
 --------
-Your title should serve as a concise summary of what the bug is. Our report titles start with the core feature issue in brackets at the very beginning of the title.
-
-.. todo
-    - [ ] Add an example of a title.
+Your title should serve as a concise summary of what the bug is. Our report titles start with the feature, module or unit name in brackets at the very beginning of the title.
+    - [generator] - bug report for the generator feature.
+    - [buffer] - bug report for the buffer module.
+    - [memoryProtection] - bug report for the memory protection unit.
 
 Environment
 ------------

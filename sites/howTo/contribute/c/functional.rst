@@ -58,8 +58,6 @@ Naming conventions
         .. code-block:: c
 
             typedef struct CosmOS_CoreVariableType CosmOS_CoreVariableType;
-    .. todo: check the sub point of this item
-
     #. Enumerators should start with the CosmOS prefix followed by an underscore symbol, then PascalCase is used for the configuration struct as it is shown in the following example for the double buffer access state enumeration:
         - Internal enumeration names consist of two parts first is the enum type name but in the end is used enum instead of type in this case BUFFER_DOUBLE_ACCESS_ENUM (SNAKE_CASE) followed by two underscore symbols and the second is actual name of the current enumeration USER_FOO (SNAKE_CASE).
             .. code-block:: c
