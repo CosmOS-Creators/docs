@@ -4,10 +4,12 @@ Contribute
 This page will describe how to contribute to the CosmOS open source project.
 
 .. toctree::
+    :maxdepth: 1
     :caption: Contents:
 
     contribute/c
     contribute/python
+    contribute/runTests
 
 What does the Code of Conduct mean for me?
 ------------------------------------------------

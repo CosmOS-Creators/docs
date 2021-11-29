@@ -1,6 +1,8 @@
 About
 =============================
 
+Following pages provide the basic information about the CosmOS project.
+
 .. toctree::
     :caption: Contents:
 
