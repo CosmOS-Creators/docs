@@ -7,7 +7,6 @@ It uses STM IDE project structure, and it is possible to open, compile and debug
 
 
 .. toctree::
-    :caption: Contents:
 
     referenceProject/structure
     referenceProject/hardware

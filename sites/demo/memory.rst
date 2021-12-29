@@ -2,6 +2,7 @@ Memory
 =============================
 
 .. toctree::
-    :caption: Contents:
 
+    memory/mapping
+    memory/protection
     memory/dynamicAllocation

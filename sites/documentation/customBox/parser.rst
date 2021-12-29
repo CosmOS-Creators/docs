@@ -10,7 +10,6 @@ All changes done through these APIs will be validated against a basic set of rul
 actually saved to the model.
 
 .. toctree::
-    :caption: Contents:
 
     parser/config_files
     parser/links

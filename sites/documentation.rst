@@ -1,8 +1,8 @@
 Documentation
 =============================
+Following pages provide generated code documentation of the CosmOS core and integration modules together with the CustomBox.
 
 .. toctree::
-    :caption: Contents:
 
     documentation/cosmos
     documentation/customBox

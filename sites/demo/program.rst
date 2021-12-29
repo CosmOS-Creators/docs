@@ -1,7 +1,7 @@
-C
+Program
 =============================
 
 .. toctree::
 
-    c/functional
-    c/tests
+    program/task
+    program/thread

@@ -2,7 +2,6 @@ Utilities
 =============================
 
 .. toctree::
-    :caption: Contents:
 
     utilities/errorHandler
     utilities/route

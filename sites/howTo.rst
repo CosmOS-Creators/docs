@@ -1,8 +1,8 @@
 How to
 =============================
+Following pages provide all information necessary to use, develop and contribute to the CosmOS open source project.
 
 .. toctree::
-    :caption: Contents:
 
     howTo/setupReferenceProject
     howTo/useIt

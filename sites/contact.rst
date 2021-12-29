@@ -2,8 +2,7 @@ Contact
 =============================
 
 In case you want to contact us privately you can use our `email address <cosmos.creators.official@gmail.com>`_, otherwise
-please don't be afraid to use our community `discord channel <https://discord.gg/XTabzYYVxS>`_ to ask any questions.
-
+please feel free to use our community `discord channel <https://discord.gg/XTabzYYVxS>`_ to ask any questions.
 
 
 You can find us also on LinkedIn:

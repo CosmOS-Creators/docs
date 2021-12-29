@@ -5,7 +5,6 @@ The reference project currently supports the development in Visual Studio Code (
 It is possible to import and compile the project in it, but the debugging is not supported yet.
 
 .. toctree::
-    :caption: Contents:
 
     vsCode/setup
     vsCode/compiling

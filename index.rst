@@ -5,11 +5,11 @@
 
 Welcome to CosmOS's pages!
 ==================================
-- CosmOS is an open-source project that we have initiated since the year 2020.
-- We aim to create a hybrid operating system that offers performance and safety features within one system.
-- The CosmOS architecture also allows the generation of all configuration code by model descriptions to increase productivity, make code portable, and enforce consistency. We created a set of tools with a graphical user interface to help users with the CosmOS deployment, consisting of configuration, validation, and code generation.
-- It also supports the C/C++ language with the dynamic allocation and allow users to develop more complex algorithms.
-- We developed CosmOS according to safety-critical design principles and coding best practices to create state-of-the-art solutions.
+This website is our main knowledge base. It will provide to you all necessary information about the project.
+You will find there how to use the operating system
+with a lot of examples, how you can contribute to the project, what tools we
+use and all other essential information. We highly suggest starting here to find everything from
+the basic overview to the deep technical details.
 
 .. toctree::
     :maxdepth: 2

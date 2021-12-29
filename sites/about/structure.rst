@@ -4,7 +4,7 @@ Structure
 CosmOS is composed of three main layers:
 ------------------------------------------
 - The application layer contains the user code
-- The core layer contains units without any microcontroller or compiler dependencies
+- The core layer contains kernel modules without any microcontroller or compiler dependencies
 - The integration layer contains units providing APIs for the core layer, and it is microcontroller specific
 
 Application layer

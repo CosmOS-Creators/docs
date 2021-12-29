@@ -5,7 +5,6 @@ The UI is a generalized skeleton which will dynamically adjust depending on the 
 
 
 .. toctree::
-    :caption: Contents:
 
     customBox/parser
     customBox/logicRunners

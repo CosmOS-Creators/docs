@@ -2,7 +2,7 @@ Synchronization primitives
 =============================
 
 .. toctree::
-    :caption: Contents:
 
     synchronizationPrimitives/mutex
+    synchronizationPrimitives/semaphore
     synchronizationPrimitives/spinlock
