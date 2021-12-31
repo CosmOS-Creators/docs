@@ -16,5 +16,5 @@ What we want to achieve?
 - **MISRA C 2012** compliant core modules.
 - **100% test coverage** of the core modules.
 - **Finished CustomBox GUI** providing all the features necessary to create new project and download core and integration bundles.
-- **Finished embedded timer peripheral IP design** on the FPGA, providing the hardware support for the safety-critical scheduling implemented in the CosmOS.
+- **Finished embedded timer peripheral IP design** on the FPGA, providing the hardware support for the critical tasks scheduling implemented in the CosmOS.
 - **Finished documentation**.

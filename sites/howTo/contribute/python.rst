@@ -5,3 +5,4 @@ Python
 
     python/functional
     python/tests
+    python/runTests

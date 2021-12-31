@@ -9,7 +9,7 @@ You can support the idea in many different ways and we appreciate every single o
 * Star our GitHub `repositories <https://github.com/CosmOS-Creators>`_, it really helps!
 * Follow our social media pages or join the `community <https://discord.gg/XTabzYYVxS/>`_.
 * Share some links that can bring more people to see what we are building and eventually join the community.
-* Spare us some coffee with donation to our `paypal <https:/paypal.com>`_.
+* Spare us some coffee with donation to our official `paypal account <https://paypal.me/cosmoscreators>`_.
 
 I am a private person
 -----------------------
@@ -19,4 +19,4 @@ You can support the idea in many different ways and we appreciate every single o
 * Star our GitHub `repositories <https://github.com/CosmOS-Creators>`_, it really helps!
 * Follow our social media pages or join the `community <https://discord.gg/XTabzYYVxS/>`_.
 * Share some links that can bring more people to see what we are building and eventually join the community.
-* Spare us some coffee with donation to our `paypal <https:/paypal.com>`_.
+* Spare us some coffee with donation to our official `paypal account <https://paypal.me/cosmoscreators>`_.

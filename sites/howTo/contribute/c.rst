@@ -5,3 +5,4 @@ C
 
     c/functional
     c/tests
+    c/runTests

@@ -23,7 +23,7 @@ copyright = "2021, Pavol Kostolansky, Florian Laschober"
 author = "Pavol Kostolansky, Florian Laschober"
 
 # The full version, including alpha/beta/rc tags
-release = "pre-alpha"
+release = ""
 
 
 # -- General configuration ---------------------------------------------------
@@ -56,7 +56,14 @@ exclude_patterns = ["_build", "Thumbs.db", ".DS_Store"]
 #
 html_theme = "furo"
 
+html_logo = "images/cosmos/cosmosWhite.png"
+html_theme_options = {
+    "sidebar_hide_name": True,
+}
+
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
 # html_static_path = ["_static"]
+
+html_favicon = 'favicon.ico'

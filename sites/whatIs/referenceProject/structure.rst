@@ -1,5 +1,6 @@
 Structure
 =============================
+This page will introduce the structure of the CosmOS reference project.
 
 The reference project uses STM IDE project structure, and it is possible to open, compile and debug in it.
     ::
