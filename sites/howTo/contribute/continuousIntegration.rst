@@ -1,2 +1,2 @@
-Channel
+Continuous integration
 =============================

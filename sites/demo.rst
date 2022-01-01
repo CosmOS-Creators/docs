@@ -5,7 +5,7 @@ Following pages provide the basic examples of the CosmOS features.
 .. toctree::
 
     demo/workflow
-    demo/dataExchange
+    demo/dataExchangeInterface
     demo/memory
     demo/scheduling
     demo/systemJobs
