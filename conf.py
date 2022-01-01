@@ -40,6 +40,11 @@ extensions = [
     "sphinx.ext.viewcode"
 ]
 
+
+breathe_projects = { "CosmOS": "doxyout/xml" }
+
+breathe_default_project = "CosmOS"
+
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ["_templates"]
 

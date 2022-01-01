@@ -56,19 +56,7 @@ Buffer read is done by the **buffer_readArray** function that takes as input:
 
 Return values
 """""""""""""""
-``BUFFER_STATE_ENUM__OK`` array was read and buffer is not empty
-
-``BUFFER_STATE_ENUM__EMPTY`` array was read and buffer is empty now
-
-``BUFFER_STATE_ENUM__ERROR_SIZE_BIGGER_THAN_FULL_CELLS_NUM`` user wants to read more bytes than is actually full in buffer
-
-``BUFFER_STATE_ENUM__ERROR_BUFFER_OCCUPIED`` somebody else is reading from the buffer
-
-``BUFFER_STATE_ENUM__ERROR_ACCESS_DENIED`` schedulable does not have permissions to read to the buffer
-
-``BUFFER_STATE_ENUM__ERROR_INPUT_ARRAY_IS_PROTECTED`` user wants to read data and write them to the protected memory
-
-``BUFFER_STATE_ENUM__ERROR_INVALID_ID`` buffer with used identifier does not exist in the system
+.. doxygenenum:: CosmOS_BufferStateType
 
 
 Buffer write
