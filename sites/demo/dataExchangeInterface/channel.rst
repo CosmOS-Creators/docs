@@ -6,7 +6,7 @@ only used for the inter-program thread communication.
 The simplified concept of the channel is the interface for the synchronized data
 transfer between sender (can be imagined as a client) and reply (can be imagined
 as a server) thread. Channel implementation currently supports data transfer from
-multiple sender threads to one reply thread. For more information please read the channel section in the CosmOS whitepaper.
+multiple sender threads to one reply thread. For more information please read the channel section in the :ref:`about_whitepaper`.
 
 Configuration
 --------------
@@ -18,7 +18,7 @@ Then we have to open from the left panel Channels tab to see all configured chan
 
 2. Configure or add new channel
 ``````````````````````````````````
-- Name of the channel is set to xCore_channel, this is the name of the channel which will be used to generate channel identifier used in for the channel read and write operations.
+- Name of the channel is set to xCore_channel, this is the name of the channel which will be used to generate channel identifier used in the channel send and reply operations.
 - Send pool size is set to 32 Bytes, this parameter defines the size of send pool array mapped in the operating system memory that is used during send operation.
 - Reply pool size is set to 32 Bytes, this parameter defines the size of reply pool array mapped in the operating system memory that is used during reply operation.
 - List of threads which have reply access to this channel contains channel_xCore_server_CM7 which means that this thread is reply (server) thread for this channel.
@@ -34,6 +34,10 @@ Code examples
 
 Channel send thread
 ```````````````````````
+
+.. collapse:: Click to see function channel_send details
+
+    .. doxygenfunction:: channel_send
 
 .. code-block:: C
 
@@ -65,9 +69,27 @@ Channel send thread
 
     }
 
+Return values
+"""""""""""""""
+.. collapse:: Click to see return values
+
+    .. doxygenenum:: CosmOS_ChannelStateType
+        :no-link:
+
 
 Channel reply thread
 ```````````````````````
+.. collapse:: Click to see function channel_initialize details
+
+    .. doxygenfunction:: channel_initialize
+
+.. collapse:: Click to see function channel_receive details
+
+    .. doxygenfunction:: channel_receive
+
+.. collapse:: Click to see function channel_reply details
+
+    .. doxygenfunction:: channel_reply
 
 .. code-block:: C
 
@@ -106,3 +128,10 @@ Channel reply thread
         }
 
     }
+
+Return values
+"""""""""""""""
+.. collapse:: Click to see return values
+
+    .. doxygenenum:: CosmOS_ChannelStateType
+        :no-link:

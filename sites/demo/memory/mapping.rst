@@ -7,7 +7,7 @@ mapping macros and the linker scripts are generated to ease the mapping of all
 sections. All memory mapping is done automatically based on the system configuration if the
 compiler supports the section pragmas, if not the user added data and functions in the application
 layer must be mapped manually. We will cover these in the code examples.
-For more information please read the memory mapping section in the CosmOS whitepaper.
+For more information please read the memory mapping section in the :ref:`about_whitepaper`.
 
 Configuration
 --------------

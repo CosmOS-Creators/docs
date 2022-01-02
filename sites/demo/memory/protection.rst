@@ -5,7 +5,7 @@ The memory protection software unit is dedicated to reconfiguring the memory
 protection regions either during initialization or runtime of the operating system.
 This is an optional feature and can be deactivated with the switch module. The memory
 protection does not need any other special configuration and it is based on the memory mapping
-sections. For more information please read the memory protection section in the CosmOS whitepaper.
+sections. For more information please read the memory protection section in the :ref:`about_whitepaper`.
 
 Configuration
 --------------
@@ -19,6 +19,11 @@ Then we have to open from the left panel Switch tab to see all configured switch
 `````````````````````````````````````
 - State of the switch is set to on (checked checkbox), to turn off memory protection we just uncheck the checkbox.
 
+3. Generate
+```````````````
+After we click on the **Generate** button in the CustomBox left panel on the bottom, the protection switch configuration
+code is generated.
+
 
 Memory protection regions
 ------------------------------
@@ -30,6 +35,7 @@ operating system listed below.
     - cachable
     - not bufferable
     - contiguous and aligned start address and size of the memory region, done by the memory mapping python logic runner
+
 
 #. Stack memory region read-write for the privileged and read-only protected for the user access.
     - shareable

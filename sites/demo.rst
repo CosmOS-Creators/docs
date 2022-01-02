@@ -11,4 +11,8 @@ Following pages provide the basic examples of the CosmOS features.
     demo/systemJobs
     demo/synchronizationPrimitives
     demo/program
-    demo/utilities
+    demo/event
+    demo/errorHandler
+    demo/interrupt
+    demo/route
+    demo/switch

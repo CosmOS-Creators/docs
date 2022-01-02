@@ -135,7 +135,6 @@ GPIO
 ```````
 We use general-purpose input/output pins to perform some of the timing measurements, for instance critical task scheduling measurements
 with the digital logic analyzer. We currently use:
-
 - Pin PA4 for the Cortex-M4 with the maximum output speed very high.
 - Pin PF11 for the Cortex-M7 with the maximum output speed very high.
 

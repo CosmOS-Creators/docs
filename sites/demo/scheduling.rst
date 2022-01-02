@@ -5,4 +5,5 @@ Scheduling
 
     scheduling/classic
     scheduling/performance
+    scheduling/hybrid
     scheduling/sleep
