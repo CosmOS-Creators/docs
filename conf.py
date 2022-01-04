@@ -12,6 +12,7 @@
 #
 import os
 import sys
+from sphinx.application import Sphinx
 
 sys.path.insert(0, os.path.abspath("../customBox/python"))
 
@@ -73,3 +74,8 @@ html_theme_options = {
 # html_static_path = ["_static"]
 
 html_favicon = 'favicon.ico'
+
+
+
+def setup(app: Sphinx) -> None:
+    pass
