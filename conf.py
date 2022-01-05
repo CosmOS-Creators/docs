@@ -13,7 +13,7 @@
 import os
 import sys
 from sphinx.application import Sphinx
-from doxy_group_collector import generate_rst_files
+from doxy_group_collector import convert_doxygen_to_rst
 
 sys.path.insert(0, os.path.abspath("../customBox/python"))
 
@@ -80,4 +80,4 @@ html_favicon = 'favicon.ico'
 
 def setup(app: Sphinx) -> None:
     # set recursice to false for a significant generation time reduction
-    generate_rst_files(breathe_projects[breathe_default_project], "doxygen_rst", "Modules", "modules", recursive=True)
+    convert_doxygen_to_rst(breathe_projects[breathe_default_project], "doxygen_rst", "Modules", "modules", recursive=True)

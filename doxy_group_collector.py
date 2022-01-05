@@ -20,6 +20,7 @@ RST_HEADER_TEMPLATE = """
 RST_TOCTREE_TEMPLATE = """
 .. toctree::
     :caption: {toctree_caption}:
+    :maxdepth: 1
 
 {toctree_list}
 """
@@ -27,8 +28,9 @@ RST_TOCTREE_TEMPLATE = """
 RST_DOXY_GROUP_TEMPLATE = """
 .. doxygengroup:: {group_name}
 
-
 """
+
+HEADING_LEVELS = ['=', '-', '`', '"', ':', '~', '*', '^']
 
 class doxy_group():
     def __init__(self, input_path: Path, refid: str):
@@ -101,15 +103,14 @@ class doxy_group():
                 inner_groups.append(doxy_group(self.__input_path, inner_group.attrib[REF_ID]))
         return inner_groups
 
-def parse_modules(input_path: Path, glob: str):
-    modules = list()
-    for file in input_path.glob(glob):
-        refid = file.stem
-        modules.append(doxy_group(input_path, refid))
-    return modules
+def rst_heading(heading: str, level: int = 0):
+    if(level < len(HEADING_LEVELS)):
+        return f'{heading}\n{len(heading) * HEADING_LEVELS[level]}\n'
+    else:
+        raise Exception(f'Heading level : {level}')
 
 def generate_rst_file_group(doxygen_group: doxy_group, output_directory: Path, recursive: bool = True):
-    file_content = RST_HEADER_TEMPLATE.format(page_title=doxygen_group.title)
+    file_content = rst_heading(doxygen_group.title)
     if(len(doxygen_group.inner_groups) > 0):
         file_list = list()
         for group in doxygen_group.inner_groups:
@@ -118,8 +119,6 @@ def generate_rst_file_group(doxygen_group: doxy_group, output_directory: Path, r
                 generate_rst_file_group(group, output_directory, recursive)
         file_content += RST_TOCTREE_TEMPLATE.format(toctree_caption=doxygen_group.title, toctree_list='\n'.join(file_list))
     file_content += RST_DOXY_GROUP_TEMPLATE.format(group_name=doxygen_group.name)
-    if(output_directory.exists() is False):
-        output_directory.mkdir(parents=True)
     filename = f'{doxygen_group.name}.rst'
     output_directory.joinpath(filename).write_text(file_content)
     if(filename in generated_files):
@@ -128,27 +127,29 @@ def generate_rst_file_group(doxygen_group: doxy_group, output_directory: Path, r
         generated_files.append(filename)
 
 def generate_root_rst_file(list_of_modules: List[doxy_group], output_directory: Path, file_title: str, file_name: str):
-    file_content = RST_HEADER_TEMPLATE.format(page_title=file_title)
+    file_content = rst_heading(file_title)
     file_list = [f'    {module.name}' for module in list_of_modules]
     file_content += RST_TOCTREE_TEMPLATE.format(toctree_caption=file_title, toctree_list='\n'.join(file_list))
     filename = f'{file_name}.rst'
     output_directory.joinpath(filename).write_text(file_content)
 
-def generate_rst_files(doxy_xml_input_path: str, output_rst_folder: str, root_title: str, root_file_name: str, recursive = True) -> None:
+def parse_modules(input_path: Path, glob: str):
+    modules = list()
+    for file in input_path.glob(glob):
+        refid = file.stem
+        modules.append(doxy_group(input_path, refid))
+    return modules
+
+def convert_doxygen_to_rst(doxy_xml_input_path: str, output_rst_folder: str, root_title: str, root_file_name: str, recursive = True) -> None:
     print("generating doxygen rst files...", end='')
     doxy_xml_input_path = Path(doxy_xml_input_path)
     output_rst_folder = Path(output_rst_folder)
     for file in output_rst_folder.glob("*"):
         file.unlink()
     modules = parse_modules(doxy_xml_input_path, MODULE_GLOB)
+    if(output_rst_folder.exists() is False):
+        output_rst_folder.mkdir(parents=True)
     generate_root_rst_file(modules, output_rst_folder, root_title, root_file_name)
     for module in modules:
         generate_rst_file_group(module, output_rst_folder, recursive)
     print("DONE")
-
-if __name__ == "__main__":
-    generate_rst_files(
-        r"C:\Files\Projects\Developement\CosmOS\reference_project_stmIDE\Cosmos\docs\doxyout\xml",
-    r"C:\Files\Projects\Developement\CosmOS\reference_project_stmIDE\Cosmos\docs\doxygen_rst",
-    "Modules",
-    "modules")
