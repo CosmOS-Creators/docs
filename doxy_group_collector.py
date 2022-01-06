@@ -1,11 +1,13 @@
 from pathlib import Path
 from typing import List
 import xml.etree.ElementTree as ET
+import breathe
 
 generated_files = list()
 
 MODULE_GLOB = "group__*__module.xml"
 
+FILE_NESTING_THRESHOLD = 2
 COMPOUND_DEF_XPATH = "./compounddef"
 INNER_GROUP_XPATH = "./innergroup"
 COMPOUND_NAME = "compoundname"
@@ -30,13 +32,20 @@ RST_DOXY_GROUP_TEMPLATE = """
 
 """
 
+RST_DOXY_GROUP_INNER_TEMPLATE = """
+.. doxygengroup:: {group_name}
+    :inner:
+
+"""
+
 HEADING_LEVELS = ['=', '-', '`', '"', ':', '~', '*', '^']
 
 class doxy_group():
-    def __init__(self, input_path: Path, refid: str):
+    def __init__(self, input_path: Path, refid: str, nesting_level: int = 0):
         self.__input_path = input_path
         self.__refid = refid
         self.__file = self.__input_path.joinpath(f'{self.__refid}.xml')
+        self.__level = nesting_level
 
         self.__name: str = None
         self.__title: str = None
@@ -70,6 +79,10 @@ class doxy_group():
         return self.__inner_groups
 
     @property
+    def nesting_level(self):
+        return self.__level
+
+    @property
     def _compound_def(self):
         if(self.__compound_def is None):
             self.__compound_def = self.__get_compound_def()
@@ -100,25 +113,39 @@ class doxy_group():
         inner_groups = list()
         for inner_group in self._compound_def.findall(INNER_GROUP_XPATH):
             if(REF_ID in inner_group.attrib):
-                inner_groups.append(doxy_group(self.__input_path, inner_group.attrib[REF_ID]))
+                inner_groups.append(doxy_group(self.__input_path, inner_group.attrib[REF_ID], self.__level + 1))
         return inner_groups
 
 def rst_heading(heading: str, level: int = 0):
     if(level < len(HEADING_LEVELS)):
         return f'{heading}\n{len(heading) * HEADING_LEVELS[level]}\n'
     else:
-        raise Exception(f'Heading level : {level}')
+        raise Exception(f'Heading level "{level}" requested, which exceeded the maximum allowed of {len(HEADING_LEVELS)}')
+
+def generate_flat_rst_file_group(doxygen_group: doxy_group, level: int = 0):
+    file_content = rst_heading(doxygen_group.title, level)
+    file_content += RST_DOXY_GROUP_TEMPLATE.format(group_name=doxygen_group.name)
+    for inner_group in doxygen_group.inner_groups:
+        file_content += generate_flat_rst_file_group(inner_group, level + 1)
+    return file_content
 
 def generate_rst_file_group(doxygen_group: doxy_group, output_directory: Path, recursive: bool = True):
+    flat_file_content = ""
     file_content = rst_heading(doxygen_group.title)
     if(len(doxygen_group.inner_groups) > 0):
         file_list = list()
-        for group in doxygen_group.inner_groups:
-            file_list.append(f'    {group.name}')
-            if(recursive):
-                generate_rst_file_group(group, output_directory, recursive)
-        file_content += RST_TOCTREE_TEMPLATE.format(toctree_caption=doxygen_group.title, toctree_list='\n'.join(file_list))
-    file_content += RST_DOXY_GROUP_TEMPLATE.format(group_name=doxygen_group.name)
+        if(doxygen_group.nesting_level < FILE_NESTING_THRESHOLD):
+            for group in doxygen_group.inner_groups:
+                if(recursive):
+                    file_list.append(f'    {group.name}')
+                    generate_rst_file_group(group, output_directory, recursive)
+            file_content += RST_TOCTREE_TEMPLATE.format(toctree_caption=doxygen_group.title, toctree_list='\n'.join(file_list))
+        else:
+            flat_file_content = generate_flat_rst_file_group(doxygen_group)
+    if(len(flat_file_content) > 0):
+        file_content = flat_file_content
+    else:
+        file_content += RST_DOXY_GROUP_TEMPLATE.format(group_name=doxygen_group.name)
     filename = f'{doxygen_group.name}.rst'
     output_directory.joinpath(filename).write_text(file_content)
     if(filename in generated_files):
