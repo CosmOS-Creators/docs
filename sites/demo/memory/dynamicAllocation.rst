@@ -41,7 +41,7 @@ The new and delete operators can be used after operating system start-up in any 
 
     int * integerPointer = new int( 100 );
 
-    if( IS_NOT( integerPointer ) )
+    if( integerPointer )
     {
         delete integerPointer;
     }

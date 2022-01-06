@@ -48,6 +48,12 @@ TCPIP CM7 Thread
 ````````````````````
 This thread contains demo LWIP code with the TCP/IP echo initialization and ethernet input function calls.
 
+Interrupt handlers CM7
+-------------------------
+TIM2 xCore IRQHandler Thread CM7
+````````````````````````````````````````````
+This thread handles the timer 2 interrupt, that is actually triggered on the different core (CM4) to test its functionality.
+
 Logger
 ---------------
 Logger Thread

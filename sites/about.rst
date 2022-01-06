@@ -11,5 +11,4 @@ Following pages provide the basic information about the CosmOS project.
     about/mainFeatures
     about/roadmap
     about/releaseNotes
-    about/supportTheIdea
     about/whitepaper

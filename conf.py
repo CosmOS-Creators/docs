@@ -78,6 +78,6 @@ html_favicon = 'favicon.ico'
 
 
 
-def setup(app: Sphinx) -> None:
+#def setup(app: Sphinx) -> None:
     # set recursice to false for a significant generation time reduction
-    convert_doxygen_to_rst(breathe_projects[breathe_default_project], "doxygen_rst", "Modules", "modules", recursive=True)
+    #convert_doxygen_to_rst(breathe_projects[breathe_default_project], "doxygen_rst", "Modules", "modules", recursive=True)

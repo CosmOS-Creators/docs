@@ -6,7 +6,7 @@
 Welcome to CosmOS's pages!
 ==================================
 This website is our main knowledge base. It provides all necessary information about the project.
-You cab find here how to use the operating system with a lot of demo examples, how you can contribute to the project, what tools we
+You can find here how to use the operating system with a lot of demo examples, how you can contribute to the project, what tools we
 use and all other essential information. We highly suggest starting here to find everything from
 the basic overview to the deep technical details.
 
@@ -20,6 +20,7 @@ the basic overview to the deep technical details.
     sites/documentation
     sites/demo
     sites/kudos
+    sites/supportTheIdea
     sites/community
     sites/socials
     sites/contact

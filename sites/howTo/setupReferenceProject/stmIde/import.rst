@@ -6,7 +6,7 @@ This page will provide you with information about how to import the reference pr
 Prerequisites
 --------------
 
-- Locally installed `STM32 Cube IDE <https://www.st.com/en/development-tools/stm32cubeide.html>`_
+- Locally installed `STM32 Cube IDE 1.5.1 <https://www.st.com/en/development-tools/stm32cubeide.html>`_
 
 
 First time STM32 Cube IDE project import
