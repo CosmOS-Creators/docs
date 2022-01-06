@@ -34,13 +34,23 @@ Code examples
 
 Semaphore get and release
 ```````````````````````````
-.. collapse:: Click to see function semaphore_getSemaphore details
+To try semaphore, the function :cpp:func:`semaphore_trySemaphore` was implemented.
 
-    .. doxygenfunction:: semaphore_getSemaphore
+.. doxygenfunction:: semaphore_trySemaphore
+    :outline:
+    :no-link:
 
-.. collapse:: Click to see function semaphore_releaseSemaphore details
+To get semaphore, the function :cpp:func:`semaphore_getSemaphore` was implemented.
 
-    .. doxygenfunction:: semaphore_releaseSemaphore
+.. doxygenfunction:: semaphore_getSemaphore
+    :outline:
+    :no-link:
+
+To release semaphore, the function :cpp:func:`semaphore_releaseSemaphore` was implemented.
+
+.. doxygenfunction:: semaphore_releaseSemaphore
+    :outline:
+    :no-link:
 
 .. code-block:: C
 
@@ -63,7 +73,6 @@ Semaphore get and release
         //error was returned, check its value
     }
 
-.. collapse:: Click to see return values
-
-    .. doxygenenum:: CosmOS_SemaphoreStateType
-        :no-link:
+Return values
+"""""""""""""""
+:cpp:enum:`CosmOS_SemaphoreStateType`

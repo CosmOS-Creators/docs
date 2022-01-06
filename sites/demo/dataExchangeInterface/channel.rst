@@ -34,10 +34,11 @@ Code examples
 
 Channel send thread
 ```````````````````````
+For channel send operation the function :cpp:func:`channel_send` was implemented.
 
-.. collapse:: Click to see function channel_send details
-
-    .. doxygenfunction:: channel_send
+.. doxygenfunction:: channel_send
+    :outline:
+    :no-link:
 
 .. code-block:: C
 
@@ -71,25 +72,28 @@ Channel send thread
 
 Return values
 """""""""""""""
-.. collapse:: Click to see return values
-
-    .. doxygenenum:: CosmOS_ChannelStateType
-        :no-link:
+:cpp:enum:`CosmOS_ChannelStateType`
 
 
 Channel reply thread
 ```````````````````````
-.. collapse:: Click to see function channel_initialize details
+For channel initialization operation the function :cpp:func:`channel_initialize` was implemented.
 
-    .. doxygenfunction:: channel_initialize
+.. doxygenfunction:: channel_initialize
+    :outline:
+    :no-link:
 
-.. collapse:: Click to see function channel_receive details
+For channel receive operation the function :cpp:func:`channel_receive` was implemented.
 
-    .. doxygenfunction:: channel_receive
+.. doxygenfunction:: channel_receive
+    :outline:
+    :no-link:
 
-.. collapse:: Click to see function channel_reply details
+For channel reply operation the function :cpp:func:`channel_reply` was implemented.
 
-    .. doxygenfunction:: channel_reply
+.. doxygenfunction:: channel_reply
+    :outline:
+    :no-link:
 
 .. code-block:: C
 
@@ -131,7 +135,4 @@ Channel reply thread
 
 Return values
 """""""""""""""
-.. collapse:: Click to see return values
-
-    .. doxygenenum:: CosmOS_ChannelStateType
-        :no-link:
+:cpp:enum:`CosmOS_ChannelStateType`

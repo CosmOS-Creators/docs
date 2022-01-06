@@ -41,6 +41,12 @@ Code examples
 Interrupt thread
 ```````````````````````````````````
 
+For interrupt handle operation the function :cpp:func:`interrupt_handle` was implemented.
+
+.. doxygenfunction:: interrupt_handle
+    :outline:
+    :no-link:
+
 .. code-block:: C
 
     #include <interrupt.h>
@@ -60,3 +66,7 @@ Interrupt thread
             //process interrupt
         }
     }
+
+Return values
+"""""""""""""""
+:cpp:enum:`CosmOS_InterruptStateType`

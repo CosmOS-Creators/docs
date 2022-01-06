@@ -32,9 +32,11 @@ Code examples
 
 Buffer read
 ```````````````
-.. collapse:: Click to see function buffer_readArray details
+For buffer read array operation the function :cpp:func:`buffer_readArray` was implemented.
 
-    .. doxygenfunction:: buffer_readArray
+.. doxygenfunction:: buffer_readArray
+    :outline:
+    :no-link:
 
 .. code-block:: C
 
@@ -54,16 +56,15 @@ Buffer read
 
 Return values
 """""""""""""""
-.. collapse:: Click to see return values
-
-    .. doxygenenum:: CosmOS_BufferStateType
-        :no-link:
+:cpp:enum:`CosmOS_BufferStateType`
 
 Buffer write
 ```````````````
-.. collapse:: Click to see function buffer_writeArray details
+For buffer write array operation the function :cpp:func:`buffer_writeArray` was implemented.
 
-    .. doxygenfunction:: buffer_writeArray
+.. doxygenfunction:: buffer_writeArray
+    :outline:
+    :no-link:
 
 .. code-block:: C
 
@@ -83,7 +84,4 @@ Buffer write
 
 Return values
 """""""""""""""
-.. collapse:: Click to see return values
-
-    .. doxygenenum:: CosmOS_BufferStateType
-        :no-link:
+:cpp:enum:`CosmOS_BufferStateType`

@@ -39,13 +39,23 @@ generated mapping macro as it is shown in the code example below.
 
 Mutex get and release
 ```````````````````````
-.. collapse:: Click to see function mutex_getMutex details
+To try mutex, function :cpp:func:`mutex_tryMutex` was implemented.
 
-    .. doxygenfunction:: mutex_getMutex
+.. doxygenfunction:: mutex_tryMutex
+    :outline:
+    :no-link:
 
-.. collapse:: Click to see function mutex_releaseMutex details
+To get mutex, function :cpp:func:`mutex_getMutex` was implemented.
 
-    .. doxygenfunction:: mutex_releaseMutex
+.. doxygenfunction:: mutex_getMutex
+    :outline:
+    :no-link:
+
+To release mutex, function :cpp:func:`mutex_releaseMutex` was implemented.
+
+.. doxygenfunction:: mutex_releaseMutex
+    :outline:
+    :no-link:
 
 .. code-block:: C
 
@@ -68,7 +78,4 @@ Mutex get and release
 
 Return values
 """""""""""""""
-.. collapse:: Click to see return values
-
-    .. doxygenenum:: CosmOS_MutexStateType
-        :no-link:
+:cpp:enum:`CosmOS_ChannelStateType`

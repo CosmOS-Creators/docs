@@ -30,6 +30,11 @@ Code examples
 
 Event trigger on every other core
 ```````````````````````````````````
+For OS event trigger operation the function :cpp:func:`osEvent_triggerEvent` was implemented.
+
+.. doxygenfunction:: osEvent_triggerEvent
+    :outline:
+    :no-link:
 
 .. code-block:: C
 
@@ -63,3 +68,7 @@ Event trigger on every other core
     {
         //error was returned, check its value
     }
+
+Return values
+"""""""""""""""
+:cpp:enum:`CosmOS_OsEventStateType`

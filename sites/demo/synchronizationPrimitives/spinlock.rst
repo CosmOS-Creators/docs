@@ -68,13 +68,23 @@ Spinlock get and release
 
 Spinlock try and release
 ```````````````````````````
-.. collapse:: Click to see function spinlock_trySpinlock details
+To try spinlock, the function :cpp:func:`spinlock_trySpinlock` was implemented.
 
-    .. doxygenfunction:: spinlock_trySpinlock
+.. doxygenfunction:: spinlock_trySpinlock
+    :outline:
+    :no-link:
 
-.. collapse:: Click to see function spinlock_releaseSpinlock details
+To get spinlock, the function :cpp:func:`spinlock_getSpinlock` was implemented.
 
-    .. doxygenfunction:: spinlock_releaseSpinlock
+.. doxygenfunction:: spinlock_getSpinlock
+    :outline:
+    :no-link:
+
+To release spinlock, the function :cpp:func:`spinlock_releaseSpinlock` was implemented.
+
+.. doxygenfunction:: spinlock_releaseSpinlock
+    :outline:
+    :no-link:
 
 .. code-block:: C
 
@@ -99,7 +109,6 @@ Spinlock try and release
         }
     }
 
-.. collapse:: Click to see return values
-
-    .. doxygenenum:: CosmOS_SpinlockStateType
-        :no-link:
+Return values
+"""""""""""""""
+:cpp:enum:`CosmOS_SpinlockStateType`

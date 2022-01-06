@@ -15,9 +15,11 @@ Code examples
 
 Thread sleep
 ``````````````
-.. collapse:: Click to see function thread_sleepMs details
+For thread sleep operation the function :cpp:func:`thread_sleepMs` was implemented.
 
-    .. doxygenfunction:: thread_sleepMs
+.. doxygenfunction:: thread_sleepMs
+    :outline:
+    :no-link:
 
 .. code-block:: C
 
@@ -34,7 +36,4 @@ Thread sleep
 
 Return values
 """""""""""""""
-.. collapse:: Click to see return values
-
-    .. doxygenenum:: CosmOS_SleepStateType
-        :no-link:
+:cpp:enum:`CosmOS_SleepStateType`
