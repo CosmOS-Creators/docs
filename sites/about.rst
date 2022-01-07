@@ -7,7 +7,7 @@ Following pages provide the basic information about the CosmOS project.
 
     about/motivation
     about/architecture
-    about/structure
+    about/softwareLayers
     about/mainFeatures
     about/roadmap
     about/releaseNotes
