@@ -1,3 +1,4 @@
 _build
-doxyout-*
+doxyout
 doxygen_rst
+__pycache__

@@ -5,4 +5,4 @@ Core
     :caption: Modules:
     :maxdepth: 2
 
-    ./../../../doxygen_rst/CosmOS Core/modules
+    ./../../../doxygen_rst/core_modules

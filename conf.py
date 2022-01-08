@@ -14,7 +14,7 @@ import os
 import sys
 import subprocess
 from sphinx.application import Sphinx
-from doxy_group_collector import convert_doxygen_to_rst
+from doxy_group_collector import convert_doxygen_to_rst, convert_doxygen_to_rst_list
 
 sys.path.insert(0, os.path.abspath("../customBox/python"))
 
@@ -44,17 +44,11 @@ extensions = [
     'sphinx_toolbox.collapse',
 ]
 
-doxyfile_projects = {
-    "CosmOS Core": "Cosmos/docs/Doxyfile-core",
-    "CosmOS Integration": "Cosmos/docs/Doxyfile-integration"
-}
-
 breathe_projects = {
-    "CosmOS Core": "doxyout-core/xml",
-    "CosmOS Integration": "doxyout-integration/xml"
+    "CosmOS": "doxyout/xml"
 }
 
-breathe_default_project = "CosmOS Core"
+breathe_default_project = "CosmOS"
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ["_templates"]
@@ -88,22 +82,33 @@ html_favicon = 'favicon.ico'
 
 def setup(app: Sphinx) -> None:
     MODULE_GLOB = "group__*__module.xml"
+    DOXYFILE_NAME = "cosmos/docs/Doxyfile"
+    GENERATED_OUTPUT_FOLDER = "doxygen_rst"
 
     # set recursice to false for a significant generation time reduction
-    for project in breathe_projects:
-        doxygen_command = ["doxygen"]
-        doxygen_command.append(doxyfile_projects[project])
-        returncode = subprocess.call(doxygen_command, shell=True, cwd="../../")
-        if(returncode == 0):
-            convert_doxygen_to_rst(
-                breathe_projects[project],
-                os.path.join("doxygen_rst", project),
-                f"{project} Modules",
-                "modules",
-                MODULE_GLOB,
-                project,
-                recursive = True,
-                max_nesting_level = 2
-            )
-        else:
-            exit()
+    doxygen_command = ["doxygen", DOXYFILE_NAME]
+    returncode = subprocess.call(doxygen_command, shell=True, cwd="../../")
+    if(returncode == 0):
+        convert_doxygen_to_rst(
+            breathe_projects[breathe_default_project],
+            GENERATED_OUTPUT_FOLDER,
+            "Core Modules",
+            "core_modules",
+            MODULE_GLOB,
+            breathe_default_project,
+            recursive = True,
+            max_nesting_level = 2,
+            exclude_groups=["CIL_module"]
+        )
+        convert_doxygen_to_rst_list(
+            breathe_projects[breathe_default_project],
+            GENERATED_OUTPUT_FOLDER,
+            "Integration Modules",
+            "integration_modules",
+            ["CIL_module"],
+            breathe_default_project,
+            recursive = True,
+            max_nesting_level = 2
+        )
+    else:
+        exit()

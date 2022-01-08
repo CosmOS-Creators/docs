@@ -127,6 +127,10 @@ def generate_flat_rst_file_group(doxygen_group: doxy_group, doxygen_project: str
         file_content += generate_flat_rst_file_group(inner_group, doxygen_project, level + 1)
     return file_content
 
+def write_file_if_not_same(out_file: Path, file_content: str):
+    if(not out_file.exists() or out_file.read_text() != file_content):
+        out_file.write_text(file_content)
+
 def generate_rst_file_group(doxygen_group: doxy_group, output_directory: Path, doxygen_project: str, recursive: bool = True, max_nesting_level: int = 2):
     flat_file_content = ""
     file_content = rst_heading(doxygen_group.title)
@@ -146,11 +150,7 @@ def generate_rst_file_group(doxygen_group: doxy_group, output_directory: Path, d
         file_content += RST_DOXY_GROUP_TEMPLATE.format(group_name = doxygen_group.name, doxygen_project = doxygen_project)
     filename = f'{doxygen_group.name}.rst'
     output_file = output_directory.joinpath(filename)
-    if(output_file.exists()):
-        if(output_file.read_text() != file_content):
-            output_file.write_text(file_content)
-    else:
-        output_file.write_text(file_content)
+    write_file_if_not_same(output_file, file_content)
     if(filename in generated_files):
         print("WARNING: File was already generated and might have been overwritten: " + filename)
     else:
@@ -161,25 +161,46 @@ def generate_root_rst_file(list_of_modules: List[doxy_group], output_directory: 
     file_list = [f'    {module.name}' for module in list_of_modules]
     file_content += RST_TOCTREE_TEMPLATE.format(toctree_caption=file_title, toctree_list='\n'.join(file_list))
     filename = f'{file_name}.rst'
-    output_directory.joinpath(filename).write_text(file_content)
+    output_file = output_directory.joinpath(filename)
+    write_file_if_not_same(output_file, file_content)
 
 def parse_modules(input_path: Path, glob: str):
-    modules = list()
+    modules: List[doxy_group] = list()
     for file in input_path.glob(glob):
         refid = file.stem
         modules.append(doxy_group(input_path, refid))
     return modules
 
-def convert_doxygen_to_rst(doxy_xml_input_path: str, output_rst_folder: str, root_title: str, root_file_name: str, doxygen_root_xml_file_glob: str, doxygen_project: str, recursive = True, max_nesting_level: int = 2) -> None:
+def convert_doxygen_to_rst(doxy_xml_input_path: str, output_rst_folder: str, root_title: str, root_file_name: str, doxygen_root_xml_file_glob: str, doxygen_project: str, recursive = True, max_nesting_level: int = 2, exclude_groups: List[str] = []) -> None:
     print("generating doxygen rst files...", end='')
     doxy_xml_input_path = Path(doxy_xml_input_path)
     output_rst_folder = Path(output_rst_folder)
-    # for file in output_rst_folder.glob("*"):
-    #     file.unlink()
     modules = parse_modules(doxy_xml_input_path, doxygen_root_xml_file_glob)
+    filtered_modules: List[doxy_group] = list()
+    for module in modules:
+        if(module.name not in exclude_groups):
+            filtered_modules.append(module)
     if(output_rst_folder.exists() is False):
         output_rst_folder.mkdir(parents=True)
-    generate_root_rst_file(modules, output_rst_folder, root_title, root_file_name)
-    for module in modules:
+    generate_root_rst_file(filtered_modules, output_rst_folder, root_title, root_file_name)
+    for module in filtered_modules:
+        generate_rst_file_group(module, output_rst_folder, doxygen_project, recursive, max_nesting_level)
+    print("DONE")
+
+
+def convert_doxygen_to_rst_list(doxy_xml_input_path: str, output_rst_folder: str, root_title: str, root_file_name: str, group_names: List[str], doxygen_project: str, recursive = True, max_nesting_level: int = 2) -> None:
+    print("generating doxygen rst files...", end='')
+    doxy_xml_input_path = Path(doxy_xml_input_path)
+    output_rst_folder = Path(output_rst_folder)
+    if(output_rst_folder.exists() is False):
+        output_rst_folder.mkdir(parents=True)
+    doxygen_root_xml_files: List[doxy_group] = list()
+    for file in doxy_xml_input_path.glob("group_*.xml"):
+        refid = file.stem
+        new_group = doxy_group(doxy_xml_input_path, refid)
+        if(new_group.name in group_names):
+            doxygen_root_xml_files.append(new_group)
+    generate_root_rst_file(doxygen_root_xml_files, output_rst_folder, root_title, root_file_name)
+    for module in doxygen_root_xml_files:
         generate_rst_file_group(module, output_rst_folder, doxygen_project, recursive, max_nesting_level)
     print("DONE")
