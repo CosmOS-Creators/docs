@@ -1,6 +1,6 @@
 Hybrid
 =============================
-The hybrid scheduling algorithm consists of the classic and
+The hybrid scheduling algorithm consists of classic and
 performance scheduling. With this combination, it is possible to schedule critical
 tasks and non-critical threads within one system.
 The main characteristics of the hybrid scheduling algorithm are:

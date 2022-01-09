@@ -1,12 +1,10 @@
 Channel
 =============================
 
-The channel module is the part of CosmOS data exchange interface. It can be
-only used for the inter-program thread communication.
-The simplified concept of the channel is the interface for the synchronized data
-transfer between sender (can be imagined as a client) and reply (can be imagined
-as a server) thread. Channel implementation currently supports data transfer from
-multiple sender threads to one reply thread. For more information please read the channel section in the :ref:`about_whitepaper`.
+The simplified concept of the channel is the interface for the synchronized data transfer between sender (can be imagined as a client)
+and reply (can be imagined as a server) thread.
+Channel implementation currently supports data transfer from multiple sender threads to one reply thread.
+For more information please read the channel section in the :ref:`about_whitepaper`.
 
 Configuration
 --------------

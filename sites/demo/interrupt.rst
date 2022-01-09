@@ -3,16 +3,15 @@ Interrupt
 The interrupt module is dedicated to configure and dispatch all interrupts in the
 system. In the CosmOS we differentiate between two types of interrupts handling
 techniques - fast and slow.
-Fast interrupt is a method where the interrupt is handled directly in the Interrupt
-Service Routine (ISR). This allows user to handle the
-most critical interrupts immediately and it the interrupt service routine execution
+The fast interrupt is a method where the interrupt is handled directly in the Interrupt
+Service Routine (ISR). This allows users to handle the
+most critical interrupts immediately, and it the interrupt service routine execution
 time should be very low.
-Slow interrupt is a method where the interrupt is handled in its specific thread.
-The thread is unblocked after the interrupt occurs, and
-blocked again when it is handled. This allows user to create non-blocking interrupt
-handling directly in the user space for non-critical interrupts and therefore it is
-possible to implement much complex algorithm inside the handling thread. We still
-suggest to keep the handler thread algorithm complexity at the minimum.
+The slow interrupt is a method where the interrupt is handled in its specific thread.
+The thread is unblocked after the interrupt occurs and blocked again when it is handled.
+This allows users to create non-blocking interrupt handling directly in the user space for non-critical interrupts and therefore
+it is possible to implement much more complex algorithms inside the handling thread.
+We still suggest keeping the handler thread algorithm complexity at the minimum.
 For more information please read the interrupt section in the :ref:`about_whitepaper`.
 
 Configuration

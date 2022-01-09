@@ -1,9 +1,9 @@
 Event
 =============================
 The operating system event unit handles the triggering and dispatching of the
-events withing the operating system.
+events within the operating system.
 The main idea of the operating system events is to be able to trigger event from
-the one core and handle it with the others.
+one core and handle it with the others.
 For more information please read the event section in the :ref:`about_whitepaper`.
 
 Configuration

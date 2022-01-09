@@ -1,7 +1,7 @@
 Buffer
 =============================
 
-The buffer module is the part of CosmOS data exchange interface. It is mainly
+The buffer module is part of the CosmOS data exchange interface. It is mainly
 used for the inter-program critical tasks communication, but not constrained to
 that. Threads can also use buffer interface but we strongly suggest to use channels
 to increase overall performance of the system. For more information please read the buffer section in the :ref:`about_whitepaper`.

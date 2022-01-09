@@ -1,21 +1,21 @@
 Performance
 =============================
 
-The performance scheduling algorithm handles the preemptive non-critical threads
-scheduling. It uses a static non-critical thread list (priority sorted to decrease context switch execution time) to take the highest priority thread as fast as possible
-each time the rescheduling event occurs. Performance scheduling algorithm also
-offers blocking non-critical threads caused by multiple events, such as putting the
-non-critical thread to sleep, being blocked by mutex or blocking it by the user.
+The performance scheduling algorithm handles the preemptive non-critical threads scheduling.
+It uses a non-critical thread queue to take the highest priority thread as fast as possible each time the rescheduling event occurs.
+Performance scheduling algorithm also offers to stop the thread's execution caused by multiple events,
+such as putting the non-critical thread to sleep, being blocked by a mutex or semaphore.
 The main characteristics of the performance scheduling algorithm are:
 
-#. The algorithm iterates over non-critical thread list and schedules the next thread based on its unique priority.
+#. The algorithm schedules a non-critical threads based on their unique priority.
 
 #. Threads are preempted in case of:
     - System timer interrupt, with the constant preempt period.
-    - User tries to obtain mutex locked by another thread.
-    - User tries to obtain sempahore locked by another thread.
-    - User puts them into sleep for some specific time.
-    - User puts them into a blocked state.
+    - Thread tries to receive data through the channel but there are no pending data.
+    - Thread tries to obtain mutex locked by another thread.
+    - Thread tries to obtain semaphore locked by another thread.
+    - Thread tries to handle the interrupt, but there has been no interrupt request made yet.
+    - Thread suspends its execution for a specified period with the thread sleep function.
 
 For more information please read the performance scheduling section in the :ref:`about_whitepaper`.
 

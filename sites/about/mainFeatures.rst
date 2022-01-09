@@ -6,7 +6,7 @@ The following list contains the main features of the CosmOS and CustomBox:
 ---------------------------------------------------------------------------
 - The CustomBox GUI helps users with configuration, generation and deployment.
 - Support for multi-core microcontrollers.
-- Hybrid scheduling combines the complex real-time non-preemptive scheduling and the multi-threading preemptive scheduling.
+- Hybrid scheduling combines the cyclic real-time non-preemptive scheduling and the multi-threading preemptive scheduling.
 - Memory mapping and memory protection of tasks/threads stacks, user program heaps, and user program data.
 - Memory manager supports thread-safe dynamic allocations.
 - Inter-program safe data transfers.

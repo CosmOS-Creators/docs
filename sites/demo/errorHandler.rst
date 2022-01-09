@@ -1,10 +1,10 @@
 Error handler
 =============================
-The error handler module detects, traces and handles all errors which can occur
+The error handler module detects, traces, and handles all errors which can occur
 within the operating system.
 The errors are traced for the every program configured in the operating system
-that can be later used for the debug purpose. Error processing allows to trigger the
-required error reaction which can be configured in the the CosmOS CustomBox.
+that can be later used for the debug purpose. Error processing allows triggering the
+required error reaction which can be configured in the CosmOS CustomBox.
 
 Configuration
 --------------

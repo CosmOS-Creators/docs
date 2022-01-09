@@ -7,7 +7,7 @@ A roadmap is a strategic plan that defines a goal or desired outcome and include
 It also serves as a communication tool, a high-level document that helps articulate strategic thinking—the why—behind both the goal and the plan for getting there.
 
 
-Live Release in Q2 2022
+Live Release in Q3 2022
 ------------------------
 
 What we want to achieve?

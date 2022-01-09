@@ -1,9 +1,8 @@
 Switch
 =============================
 
-The switches module enables the user and integrator to turn on/off some of
-the operating system functionalities, which might depend on hardware or are just
-optional features and do not affect the operating system.
+The switches module allows the user and integrator to turn on/off some of the operating system functionalities,
+which might depend on hardware or are just optional features and do not affect the operating system.
 This module has one switch header file per functionality that might be turned
 on/off during the system configuration. This header file provides switch macro API
 which can be mapped to the real function implementations or serve as stubbed
