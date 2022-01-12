@@ -5,7 +5,6 @@ Parser configuration files
 
 .. autoclass:: Parser.AttributeTypes::AttributeType
 
-
 .. autoclass:: Parser.AttributeTypes::StringType
 
 .. autoclass:: Parser.AttributeTypes::BoolType

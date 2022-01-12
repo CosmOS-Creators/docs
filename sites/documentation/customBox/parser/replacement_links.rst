@@ -67,6 +67,30 @@
 
 
 
+.. |STRING_ATTRIB_SHORT| replace:: :data:`string <Parser.AttributeTypes.StringType>`
+
+.. |INT_ATTRIB_SHORT| replace:: :data:`int <Parser.AttributeTypes.IntType>`
+
+.. |FLOAT_ATTRIB_SHORT| replace:: :data:`float <Parser.AttributeTypes.FloatType>`
+
+.. |BOOL_ATTRIB_SHORT| replace:: :data:`bool <Parser.AttributeTypes.BoolType>`
+
+.. |HEX_ATTRIB_SHORT| replace:: :data:`hex <Parser.AttributeTypes.HexType>`
+
+.. |REFERENCE_LIST_ATTRIB_SHORT| replace:: :data:`referenceList <Parser.AttributeTypes.ReferenceListType>`
+
+.. |STRING_LIST_ATTRIB_SHORT| replace:: :data:`stringList <Parser.AttributeTypes.StringListType>`
+
+.. |SELECTION_ATTRIB_SHORT| replace:: :data:`selection <Parser.AttributeTypes.SelectionType>`
+
+.. |SLIDER_ATTRIB_SHORT| replace:: :data:`slider <Parser.AttributeTypes.SliderType>`
+
+.. |PARENT_REFERENCE_ATTRIB_SHORT| replace:: :data:`parentReference <Parser.AttributeTypes.ParentReferenceType>`
+
+
+
+
+
 .. |JSON_PROPERTY_TYPE_LINK| replace:: :data:`link <Parser.LinkElement.Link>`
 
 .. |JSON_PROPERTY_TYPE_BOOL| replace:: bool

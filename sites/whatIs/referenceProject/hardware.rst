@@ -17,7 +17,7 @@ The main features are:
 * 1 Mbyte of RAM
 * Ethernet MAC interface with DMA controller
 
-and more you can read on the `STM32H755ZI microcontroller product page <https://www.st.com/en/microcontrollers-microprocessors/stm32h755zi.html/>`_
+and more you can read on the `STM32H755ZI microcontroller product page`_
 
 
 Development board
@@ -31,13 +31,15 @@ The main features are:
 * On-board ST-LINK debugger/programmer with USB re-enumeration capability: mass storage, virtual COM port, and debug port
 * Support of a wide choice of Integrated Development Environments (IDEs) including IAR Embedded Workbench®, MDK-ARM, and STM32CubeIDE
 
-and more you can read on the `Nucleo-144 board product page <https://www.st.com/en/microcontrollers-microprocessors/stm32h755zi.html/>`_
+and more you can read on the `STM32H755ZI microcontroller product page`_
 
 
 Resources
 --------------
 
-- `STM32H755ZI microcontroller product page <https://www.st.com/en/microcontrollers-microprocessors/stm32h755zi.html>`_
+- `STM32H755ZI microcontroller product page`_
 - `STM32H755ZI MCU reference manual <https://www.st.com/resource/en/reference_manual/dm00176879-stm32h745755-and-stm32h747757-advanced-armbased-32bit-mcus-stmicroelectronics.pdf>`_
 - `Nucleo-144 board product page <https://www.st.com/en/microcontrollers-microprocessors/stm32h755zi.html>`_
 - `H755ZIQ-C01 development board schematics <https://www.st.com/resource/en/schematic_pack/mb1363-h755ziq-c01_schematic.pdf>`_
+
+.. _STM32H755ZI microcontroller product page: https://www.st.com/en/microcontrollers-microprocessors/stm32h755zi.html

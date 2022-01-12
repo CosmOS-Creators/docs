@@ -74,10 +74,13 @@ each root level element represents one type of file generation. There
 can be as many root level elements as needed. Every root level element
 may contain the following properties:
 
--  templates:
--  Mandatory: Yes
--  Type: list of strings -> List of partial paths to a file
--  Description: The templates list is used to determine which templates
+**********
+templates
+**********
+
+:Mandatory: Yes
+:Type: list of strings -> List of partial paths to a file
+:Description: The templates list is used to determine which templates
    to use for the file generation. The value should be a path relative
    to the template directory that was passed to the generator when
    instantiating it. The file ending of the template should be omitted.
@@ -88,10 +91,18 @@ may contain the following properties:
    The generator will look for templates that start with the string
    specified and will generate one output file for each of the found
    matching templates keeping their original file extension but removing
-   the ``.j2`` extension. For example, The following directory is given:
-   Templates/ ├─ application/ │ ├─ program.h.j2 │ ├─ program.c.j2 │ ├─
-   programImplementation.h.j2 │ ├─ programImplementation.c.j2 By
-   specifying ``application/program`` in the templates list the
+   the ``.j2`` extension. For example, The following directory structure is given:
+
+   .. code-block::
+
+    Templates/
+    ├─ application/
+    │ ├─ program.h.j2
+    │ ├─ program.c.j2
+    │ ├─ programImplementation.h.j2
+    │ ├─ programImplementation.c.j2
+
+   By specifying ``application/program`` in the templates list the
    following files will be generated:
 
    -  program.h
@@ -99,14 +110,21 @@ may contain the following properties:
    -  programImplementation.h
    -  programImplementation.c
 
--  outputDir:
--  Mandatory: yes
--  Type: string -> Path to folder
--  Description: Path where the generated output files should be placed
--  fileName:
--  Mandatory: no
--  Type: string -> Name of the output file
--  Description: The name the output file will be given. File extensions
+***********
+outputDir
+***********
+
+:Mandatory: yes
+:Type: string -> Path to folder
+:Description: Path where the generated output files should be placed
+
+***********
+fileName
+***********
+
+:Mandatory: no
+:Type: string -> Name of the output file
+:Description: The name the output file will be given. File extensions
    should be omitted here as they will be taken from the template file
    name instead. If this property is not specified the name of the
    template file will be used as a default. There are the following
@@ -119,11 +137,14 @@ may contain the following properties:
       used. Will be replaced by the value of the specified attribute of
       the current loop element.
 
--  pattern:
--  Mandatory: no
--  Type: dictionary of string: string -> file extension : output
+*********
+pattern
+*********
+
+:Mandatory: no
+:Type: dictionary of string: string -> file extension : output
    subfolder name
--  Description: If specified any file matching any of the defined
+:Description: If specified any file matching any of the defined
    extensions in the dictionary will be generated in a subfolder of the
    output directory with the name of the key value For example the
    following patter config:
@@ -138,20 +159,27 @@ may contain the following properties:
    Will put output files with the .c extension to a subfolder ``src`` of
    the output directory while files with the extension .h will be
    generated in a subfolder called ``inc``.
--  loop:
--  Mandatory: no
--  Type: string -> Link to a config attribute in the form of
+
+*****
+loop
+*****
+:Mandatory: no
+:Type: string -> Link to a config attribute in the form of
    ``config/:attributeName``
--  Description: If specified all elements in the given config will be
+:Description: If specified all elements in the given config will be
    looped through and for every config element one output file will be
    generated. The ``{target}`` placeholder will be populated with the
    value of the specified attribute of the current loop element so that
    is can be used in the ``fileName`` property to generate a file with a
    unique filename.
--  target:
--  Mandatory: no
--  Type: string -> variable name
--  Description: Can only be used if the ``loop`` property is also given.
+
+********
+target
+********
+
+:Mandatory: no
+:Type: string -> variable name
+:Description: Can only be used if the ``loop`` property is also given.
    If specified an additional variable with the name that is given as
    the value of this property will become available to be used in the
    template containing the current loop element.
