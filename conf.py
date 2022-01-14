@@ -14,6 +14,7 @@ import os
 import sys
 import subprocess
 from sphinx.application import Sphinx
+sys.path.insert(0, os.path.abspath("."))
 from doxy_group_collector import convert_doxygen_to_rst, convert_doxygen_to_rst_list
 
 sys.path.insert(0, os.path.abspath("../customBox/python"))

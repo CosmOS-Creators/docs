@@ -7,3 +7,4 @@ releases and events don't hesitate and follow us!
 
     socials/linkedIn
     socials/twitter
+    socials/youtube
