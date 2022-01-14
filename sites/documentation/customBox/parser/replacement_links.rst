@@ -12,15 +12,15 @@
 
 .. |VALIDATION_KEY| replace:: :data:`validation <Parser.constants.VALIDATION_KEY>`
 
-.. |ELEMENTS_LIST_KEY| replace:: :data:`validation <Parser.constants.ELEMENTS_LIST_KEY>`
+.. |ELEMENTS_LIST_KEY| replace:: :data:`elements <Parser.constants.ELEMENTS_LIST_KEY>`
 
-.. |STEP_KEY| replace:: :data:`validation <Parser.constants.STEP_KEY>`
+.. |STEP_KEY| replace:: :data:`step <Parser.constants.STEP_KEY>`
 
-.. |MIN_KEY| replace:: :data:`validation <Parser.constants.MIN_KEY>`
+.. |MIN_KEY| replace:: :data:`min <Parser.constants.MIN_KEY>`
 
-.. |MAX_KEY| replace:: :data:`validation <Parser.constants.MAX_KEY>`
+.. |MAX_KEY| replace:: :data:`max <Parser.constants.MAX_KEY>`
 
-.. |ALIGNMENT_KEY| replace:: :data:`validation <Parser.constants.ALIGNMENT_KEY>`
+.. |ALIGNMENT_KEY| replace:: :data:`alignment <Parser.constants.ALIGNMENT_KEY>`
 
 
 
