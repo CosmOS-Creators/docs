@@ -10,21 +10,27 @@ You can find here how to use the operating system with a lot of demo examples, h
 use and all other essential information. We highly suggest starting here to find everything from
 the basic overview to the deep technical details.
 
-.. toctree::
-    :maxdepth: 2
-    :caption: Contents:
+.. warning::
 
-    sites/about
-    sites/whatIs
-    sites/howTo
-    sites/documentation
-    sites/demo
-    sites/kudos
-    sites/supportTheIdea
-    sites/community
-    sites/socials
-    sites/contact
-    sites/faq
+   This is a prototype version of the software.
+
+.. collapse:: Click to see contents
+
+    .. toctree::
+        :maxdepth: 2
+
+        sites/about
+        sites/whatIs
+        sites/howTo
+        sites/documentation
+        sites/demo
+        sites/kudos
+        sites/supportTheIdea
+        sites/community
+        sites/socials
+        sites/contact
+        sites/faq
+
 
 Indices and tables
 ==================
