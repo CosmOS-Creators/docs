@@ -17,8 +17,6 @@ The main features are:
 * 1 Mbyte of RAM
 * Ethernet MAC interface with DMA controller
 
-and more you can read on the `STM32H755ZI microcontroller product page`_
-
 
 Development board
 ------------------
@@ -30,8 +28,6 @@ The main features are:
 * Board connectors: USB with Micro-AB or USB Type-C®Ethernet RJ45
 * On-board ST-LINK debugger/programmer with USB re-enumeration capability: mass storage, virtual COM port, and debug port
 * Support of a wide choice of Integrated Development Environments (IDEs) including IAR Embedded Workbench®, MDK-ARM, and STM32CubeIDE
-
-and more you can read on the `STM32H755ZI microcontroller product page`_
 
 
 Resources
