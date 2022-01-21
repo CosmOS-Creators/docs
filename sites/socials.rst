@@ -5,6 +5,6 @@ releases and events don't hesitate and follow us!
 
 .. toctree::
 
-    socials/linkedIn
-    socials/twitter
-    socials/youtube
+    LinkedIn <https://www.linkedin.com/company/cosmoscreators>
+    Twitter <https://twitter.com/cosmos_creators>
+    YouTube <https://www.youtube.com/channel/UCWSxT8kLvbVGm-9HlEyiRUg>

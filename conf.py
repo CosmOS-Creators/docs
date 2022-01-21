@@ -43,6 +43,7 @@ extensions = [
     "sphinx.ext.napoleon",
     "sphinx.ext.viewcode",
     'sphinx_toolbox.collapse',
+    'sphinx_panels',
 ]
 
 breathe_projects = {
