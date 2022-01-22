@@ -12,3 +12,4 @@ It uses STM IDE project structure, and it is possible to open, compile and debug
     referenceProject/hardware
     referenceProject/configuration
     referenceProject/examplePrograms
+    referenceProject/measurements
