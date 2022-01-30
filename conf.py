@@ -12,6 +12,10 @@
 #
 import os
 import sys
+import subprocess
+from sphinx.application import Sphinx
+sys.path.insert(0, os.path.abspath("."))
+from doxy_group_collector import convert_doxygen_to_rst, convert_doxygen_to_rst_list
 
 sys.path.insert(0, os.path.abspath("../customBox/python"))
 
@@ -23,7 +27,7 @@ copyright = "2021, Pavol Kostolansky, Florian Laschober"
 author = "Pavol Kostolansky, Florian Laschober"
 
 # The full version, including alpha/beta/rc tags
-release = "0.1.0"
+release = ""
 
 
 # -- General configuration ---------------------------------------------------
@@ -37,8 +41,16 @@ extensions = [
     "sphinx.ext.autodoc",
     "sphinx.ext.githubpages",
     "sphinx.ext.napoleon",
-    "sphinx.ext.viewcode"
+    "sphinx.ext.viewcode",
+    'sphinx_toolbox.collapse',
+    'sphinx_panels',
 ]
+
+breathe_projects = {
+    "CosmOS": "doxyout/xml"
+}
+
+breathe_default_project = "CosmOS"
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ["_templates"]
@@ -56,7 +68,51 @@ exclude_patterns = ["_build", "Thumbs.db", ".DS_Store"]
 #
 html_theme = "furo"
 
+html_logo = "images/cosmos/cosmosWhite.png"
+html_theme_options = {
+    "sidebar_hide_name": True,
+}
+
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
 # html_static_path = ["_static"]
+
+html_static_path = ['_static', 'whitepaper']
+
+html_favicon = 'favicon.ico'
+
+
+
+def setup(app: Sphinx) -> None:
+    MODULE_GLOB = "group__*__module.xml"
+    DOXYFILE_NAME = "cosmos/docs/Doxyfile"
+    GENERATED_OUTPUT_FOLDER = "doxygen_rst"
+
+    # set recursice to false for a significant generation time reduction
+    doxygen_command = ["doxygen", DOXYFILE_NAME]
+    returncode = subprocess.call(doxygen_command, shell=True, cwd="../../")
+    if(returncode == 0):
+        convert_doxygen_to_rst(
+            breathe_projects[breathe_default_project],
+            GENERATED_OUTPUT_FOLDER,
+            "Core Modules",
+            "core_modules",
+            MODULE_GLOB,
+            breathe_default_project,
+            recursive = True,
+            max_nesting_level = 2,
+            exclude_groups=["CIL_module"]
+        )
+        convert_doxygen_to_rst_list(
+            breathe_projects[breathe_default_project],
+            GENERATED_OUTPUT_FOLDER,
+            "Integration Modules",
+            "integration_modules",
+            ["CIL_module"],
+            breathe_default_project,
+            recursive = True,
+            max_nesting_level = 2
+        )
+    else:
+        exit()

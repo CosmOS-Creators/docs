@@ -1,0 +1,137 @@
+\documentclass[12pt]{report}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{indentfirst}
+\usepackage{graphicx}
+\usepackage{svg}
+\graphicspath{ {images/} }
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage[a4paper,width=150mm,top=25mm,bottom=25mm,bindingoffset=6mm]{geometry}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhead{}
+\fancyhead[RO,LE]{CosmOS real-time operating system whitepaper}
+\fancyfoot{}
+\fancyfoot[LE,RO]{\thepage}
+\fancyfoot[CO,RE]{}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+\newcommand{\inlinecode}{\texttt}
+\usepackage{tikz}
+\usetikzlibrary{fit, positioning}
+\usepackage{hyperref}
+\bibliographystyle{ieeetr}
+\usepackage{biblatex}
+\usepackage{lipsum}
+\usepackage{mathrsfs}
+\usepackage{float}
+\usepackage{bm}
+\usepackage{amsfonts}
+\usepackage{lipsum}
+\usepackage{etoolbox}
+\usepackage{titlesec}
+\usepackage{comment}
+\usepackage{listings}
+\usepackage[acronym]{glossaries}
+\usepackage[withpage, printonlyused]{acronym}
+\usepackage{datetime}
+\usepackage{caption}
+
+\newdateformat{monthdayyeardate}{%
+  \monthname[\THEMONTH]~\THEDAY, \THEYEAR}
+
+\makeatletter
+\g@addto@macro\caption@prepareslc{%
+  \let\acused\@gobble
+  \let\AC@placelabel\@gobble}
+\makeatother
+
+\definecolor{mygreen}{rgb}{0,0.6,0}
+\definecolor{mygray}{rgb}{0.5,0.5,0.5}
+\definecolor{mymauve}{rgb}{0.58,0,0.82}
+
+\lstset{ %
+  backgroundcolor=\color{white},   % choose the background color
+  basicstyle=\footnotesize,        % size of fonts used for the code
+  breaklines=true,                 % automatic line breaking only at whitespace
+  captionpos=b,                    % sets the caption-position to bottom
+  commentstyle=\color{mygreen},    % comment style
+  escapeinside={\%*}{*)},          % if you want to add LaTeX within your code
+  keywordstyle=\color{blue},       % keyword style
+  stringstyle=\color{mymauve},     % string literal style
+  showstringspaces=false
+}
+
+\makeatletter
+\patchcmd{\chapter}{\if@openright\cleardoublepage\else\clearpage\fi}%
+    {\par\addvspace{\baselineskip}}{}{}
+\titlespacing*{\chapter}{0mm}{3em}{1em}
+\patchcmd{\ttl@save@mkschap}{*}{}{}{}
+\makeatother
+
+\titleformat{\chapter}[display]
+  {\normalfont\bfseries}{}{0pt}{\Huge}
+
+\setcounter{tocdepth}{4}
+\setcounter{secnumdepth}{5}
+
+\definecolor{CosmosBlue}{RGB}{0,74,173}
+
+\hypersetup
+{
+    colorlinks=true,
+    linkcolor=black,
+    urlcolor=CosmosBlue,
+}
+
+\urlstyle{same}
+
+\begin{document}
+\parindent=0.5cm
+
+\input{titlepage}
+
+\newpage
+
+\vspace*{-2.5cm}
+\tableofcontents
+
+\cleardoublepage
+\phantomsection
+\addcontentsline{toc}{chapter}{Acronyms}
+\vspace*{-2.5cm}
+\chapter*{Acronyms}
+\input{chapters/Acronyms}
+
+\cleardoublepage
+\phantomsection
+\addcontentsline{toc}{chapter}{\listfigurename}
+\vspace*{-2.5cm}
+\listoffigures
+
+\cleardoublepage
+\phantomsection
+\addcontentsline{toc}{chapter}{\listtablename}
+\vspace*{-2.5cm}
+\listoftables
+
+\newpage
+
+\vspace*{-2.5cm}
+\chapter{Introduction}
+\input{chapters/Introduction}
+
+\newpage
+
+\vspace*{-2.5cm}
+\chapter{Technical solutions}
+\input{chapters/TechnicalSolutions}
+
+\newpage
+
+\vspace*{-2.5cm}
+\chapter{Discover more}
+\input{chapters/DiscoverMore}
+
+\end{document}
