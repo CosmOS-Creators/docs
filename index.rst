@@ -58,9 +58,7 @@
 
 .. raw:: html
 
-    <p align="center"><iframe id="ytplayer" type="text/html" width="640" height="360"
-    src="https://www.youtube.com/embed/M7lc1UVf-VE?autoplay=1&origin=http://example.com"
-    frameborder="0"></iframe></p>
+    <p align="center"><iframe frameborder="0" scrolling="no" marginheight="0" marginwidth="0"width="640.8" height="360" type="text/html" src="https://www.youtube.com/embed/87kAi4uQ0Sg?autoplay=0&fs=1&iv_load_policy=3&showinfo=0&rel=0&cc_load_policy=0&start=0&end=0&origin=http://youtubeembedcode.com"><div><small><a href="https://youtubeembedcode.com/pl/">youtubeembedcode.com/pl/</a></small></div><div><small><a href="https://mgacasinoutansvensklicens.se/">https://mgacasinoutansvensklicens.se</a></small></div><div><small><a href="https://youtubeembedcode.com/es/">youtubeembedcode.com/es/</a></small></div><div><small><a href="https://www.xn--casinonutangrnser-2qb.se/">casino utan gräns</a></small></div><div><small><a href="https://youtubeembedcode.com/en">youtubeembedcode.com/en/</a></small></div><div><small><a href="https://xn--utangrns-5za.se/">casino utan gräns</a></small></div></iframe></p>
 
 .. Important::
 
