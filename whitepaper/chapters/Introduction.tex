@@ -5,10 +5,10 @@
 \indent We developed CosmOS according to safety-critical design principles and coding best practices and we will strive to enhance the overall quality and safety of the software for the future releases.
 
 \section{Architecture}
-\indent CosmOS architecture is microkernel-based and implements a near-minimum amount of the operating system’s software.\\ 
-\indent The main parts of the CosmOS microkernel is scheduling, memory handling, and data exchange interface. Data exchange interface is the operating system basic inter-program communication model. The microkernel can be easily expanded either with system jobs if it is necessary and make the microkernel modular, even though is highly suggested to implement all services in the user space and use data exchange interface for the inter-program communication as it is shown in the figure \ref{fig:systemArchitecture}.\\
-\indent The programs are running in the user space and each of them is encapsulates its threads and tasks, providing them a safe memory space for the data, and heap for the dynamic allocation. This design allows users to implement programs with multiple safety levels without any interference between them. \\
-\indent To ensure memory safety, the operating system configuration is completely static that includes also configured programs, tasks and threads and remain constant during the run-time. 
+\indent CosmOS architecture is microkernel-based and implements a near-minimum amount of the operating system's software.\\
+\indent The main parts of the CosmOS microkernel is scheduling, memory handling, and data exchange interface. The data exchange interface is the operating system's basic inter-program communication model. The microkernel can be easily expanded either with system jobs if it is necessary and make the microkernel modular, even though is highly suggested to implement all services in the user space and use data exchange interface for the inter-program communication as it is shown in the figure \ref{fig:systemArchitecture}.\\
+\indent The programs are running in the user space and each of them encapsulates its threads and tasks, providing them a safe memory space for the data, and heap for the dynamic allocation. This design allows users to implement programs with multiple safety levels without any interference between them. \\
+\indent To ensure memory safety, the operating system configuration is completely static that includes also configured programs, tasks, and threads and remains constant during the run-time.
 \begin{figure}[H]
 \begin{center}
 \includegraphics[width=1\textwidth]{images/system_architecture.png}
@@ -57,4 +57,3 @@ In the figure \ref{fig:systemArchitecture} is shown the workflow diagram of the 
 \label{fig:workflow}
 \end{center}
 \end{figure}
-
