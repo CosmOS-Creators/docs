@@ -14,11 +14,14 @@ import os
 import sys
 import subprocess
 from sphinx.application import Sphinx
+from sphinx.util import logging
 sys.path.insert(0, os.path.abspath("."))
 from doxy_group_collector import convert_doxygen_to_rst, convert_doxygen_to_rst_list
 
 sys.path.insert(0, os.path.abspath("../customBox/python"))
 
+
+logger = logging.getLogger(__name__)
 
 # -- Project information -----------------------------------------------------
 
@@ -86,12 +89,13 @@ html_favicon = 'favicon.ico'
 
 def setup(app: Sphinx) -> None:
     MODULE_GLOB = "group__*__module.xml"
-    DOXYFILE_NAME = "cosmos/docs/Doxyfile"
+    DOXYFILE_NAME = "Cosmos/docs/Doxyfile"
     GENERATED_OUTPUT_FOLDER = "doxygen_rst"
 
     # set recursice to false for a significant generation time reduction
     doxygen_command = ["doxygen", DOXYFILE_NAME]
-    returncode = subprocess.call(doxygen_command, shell=True, cwd="../../")
+    logger.info(f"Running doxygen command: {doxygen_command}")
+    returncode = subprocess.call(doxygen_command, cwd="../../")
     if(returncode == 0):
         convert_doxygen_to_rst(
             breathe_projects[breathe_default_project],
@@ -115,4 +119,5 @@ def setup(app: Sphinx) -> None:
             max_nesting_level = 2
         )
     else:
-        exit()
+        logger.error("Doxygen failed to generate documentation.")
+        exit(returncode)
