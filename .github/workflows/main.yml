@@ -32,6 +32,10 @@ jobs:
           wget $SCRIPT_URL
           cd $GITHUB_WORKSPACE
           python3 /tools/try_submodule_checkout.py $GITHUB_WORKSPACE https://github.com/CosmOS-Creators/reference_project_stmIDE.git master
+      - uses: actions/checkout@v2
+        with:
+          repository: CosmOS-Creators/CosmOS-Creators.github.io
+          path: $GITHUB_WORKSPACE/gh-pages
       - name: install pip requirements
         run: |
           pip3 install -r $GITHUB_WORKSPACE/Cosmos/docs/requirements.txt
@@ -42,7 +46,6 @@ jobs:
 
       - name: Commit documentation changes
         run: |
-          git clone https://github.com/CosmOS-Creators/CosmOS-Creators.github.io.git --branch master single-branch $GITHUB_WORKSPACE/gh-pages
           cp -r docs/_build/html/* $GITHUB_WORKSPACE/gh-pages
           cd $GITHUB_WORKSPACE/gh-pages
           git config --local user.email "action@github.com"
