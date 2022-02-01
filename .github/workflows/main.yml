@@ -7,8 +7,6 @@ on:
   # Triggers the workflow on push or pull request events but only for the master branch
   push:
     branches: [ master ]
-  pull_request:
-    branches: [ master ]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -34,10 +32,6 @@ jobs:
           wget $SCRIPT_URL
           cd $GITHUB_WORKSPACE
           python3 /tools/try_submodule_checkout.py $GITHUB_WORKSPACE https://github.com/CosmOS-Creators/reference_project_stmIDE.git master
-      - uses: actions/checkout@v2
-        with:
-          repository: CosmOS-Creators/CosmOS-Creators.github.io
-          path: gh-pages
       - name: install pip requirements
         run: |
           pip3 install -r $GITHUB_WORKSPACE/Cosmos/docs/requirements.txt
@@ -46,18 +40,18 @@ jobs:
           cd $GITHUB_WORKSPACE/Cosmos/docs
           make html
 
-#       - name: Commit documentation changes
-#         run: |
-#           git clone https://github.com/CosmOS-Creators/CosmOS-Creators.github.io.git --branch master single-branch gh-pages
-#           cp -r docs/_build/html/* gh-pages/
-#           cd gh-pages
-#           git config --local user.email "action@github.com"
-#           git config --local user.name "GitHub Action"
-#           git add .
-#           git commit -m "Update documentation" -a || true
-#       - name: Push changes
-#         uses: ad-m/github-push-action@master
-#         with:
-#           branch: gh-pages
-#           directory: gh-pages
-#           github_token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Commit documentation changes
+        run: |
+          git clone https://github.com/CosmOS-Creators/CosmOS-Creators.github.io.git --branch master single-branch $GITHUB_WORKSPACE/gh-pages
+          cp -r docs/_build/html/* $GITHUB_WORKSPACE/gh-pages
+          cd $GITHUB_WORKSPACE/gh-pages
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add .
+          git commit -m "Update documentation" -a || true
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          branch: gh-pages
+          directory: $GITHUB_WORKSPACE/gh-pages
+          github_token: ${{ secrets.GITHUB_TOKEN }}
