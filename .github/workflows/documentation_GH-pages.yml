@@ -30,6 +30,8 @@ jobs:
           make html
 
       - name: Commit documentation changes
+        env:
+          PAT_TOKEN: ${{secrets.COSMOS_BUILDER_PAT}}
         run: |
           git clone https://github.com/CosmOS-Creators/CosmOS-Creators.github.io.git gh-pages
           cd $GITHUB_WORKSPACE
@@ -39,9 +41,4 @@ jobs:
           git config --local user.name "GitHub Action"
           git add .
           git commit -m "Update documentation" -a || true
-      - name: Push changes
-        uses: ad-m/github-push-action@master
-        with:
-          branch: master
-          directory: gh-pages
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          git push https://${PAT_TOKEN}@github.com/CosmOS-Creators/CosmOS-Creators.github.io.git
