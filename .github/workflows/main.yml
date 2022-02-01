@@ -46,7 +46,7 @@ jobs:
 
       - name: Commit documentation changes
         run: |
-          cp -r docs/_build/html/* $GITHUB_WORKSPACE/gh-pages
+          cp -r $GITHUB_WORKSPACE/Cosmos/docs/_build/html/* $GITHUB_WORKSPACE/gh-pages
           cd $GITHUB_WORKSPACE/gh-pages
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
