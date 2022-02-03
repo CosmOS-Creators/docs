@@ -39,7 +39,7 @@ Under the Cosmos directory we can found following structure:
         environment.
 
     #. `configuration <https://github.com/CosmOS-Creators/reference_project_stmIDE/tree/master/Cosmos/configuration>`_
-        This directory contains all workspace and file generation config files together with the systemDefinition directory.
+        This directory contains all environment and file generation config files together with the systemDefinition directory.
         In the systemDefinition directory we can find two subfolders, one is for the core and one for
         the system specific configuration. These are used during the model creation and generation of the unit configuration
         source code.

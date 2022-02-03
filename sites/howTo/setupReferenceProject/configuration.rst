@@ -5,5 +5,5 @@ This page provides all necessary information about configuration files.
 
 .. toctree::
 
-    configuration/workspace
+    configuration/environment
     configuration/genericJson
